@@ -23,8 +23,8 @@ answer](https://stackoverflow.com/questions/47110907/what-should-i-do-if-two-mod
 about using "mixins" to rename modules.
 
 We can rename modules from external packages as well. For example, we can
-rename `Data.ByteString` from `bytestring` to `Bytes`. That is left as an
-exercise.
+rename `Data.ByteString` from package `bytestring` to `Bytes`. That is left as
+an exercise.
 
 Compile in this folder with the command:
 
