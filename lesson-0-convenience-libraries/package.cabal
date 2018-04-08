@@ -9,7 +9,7 @@ library -- the main library
         base,
         foo
     exposed-modules:
-        Bar
+        Lesson0
     default-language: Haskell2010
 
 -- this named convenience library is not seen outside the package
