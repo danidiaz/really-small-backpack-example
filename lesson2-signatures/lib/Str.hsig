@@ -1,0 +1,9 @@
+signature Str where
+
+import Prelude (Char,Monoid,Show)
+
+data Str
+instance Monoid Str
+instance Show Str
+
+splitOn :: Char -> Str -> [Str]
