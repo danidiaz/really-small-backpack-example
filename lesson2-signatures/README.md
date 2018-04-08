@@ -3,7 +3,7 @@ implementations.
 
 We have a ridiculously simplistic "template engine" defined in the
 [`Lesson2`](./lib/Lesson2.hs) module. It lets us "compile" a string into a
-`Template` and then render the template with different argument.
+`Template` and then render the template with different arguments.
 
 However, we don't want to depend on any particular string implementation. We
 want it to be easily adaptable for many string types, without cluttering the
@@ -32,7 +32,7 @@ signature. They just happen to be compatible with it.
 
 Now for the mixin magic. In a previous lesson we used "mixins:" to create
 renamed copies of modules. Turns out that "mixins:" can also rename the
-*signatures* required by a module! This is a bit difficult to wrap your head
+*signatures* required by a module! This can be difficult to wrap your head
 around at first.
 
 In the cabal file we see:
@@ -46,7 +46,7 @@ In the cabal file we see:
 We are making two different copies of `Lesson2`. Besides giving them names, we
 are using the `requires` clause to *rename the required signature*, making it
 overlap with the name of the appropiate implementation module! Mixing matching
-is triggered by a coincidency of module and signature names; this is why the
+is triggered by a coincidence of module and signature names; this is why the
 renaming machinery is important for Backpack.
 
 And this is basically it. The `Main` module imports both `Lesson2.String` and
