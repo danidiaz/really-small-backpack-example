@@ -1,9 +1,12 @@
 signature Str where
 
+-- It is better if signatures bring only the bare minimum of types and
+-- functions into scope.
+-- Use import Prelude () if you can!
 import Prelude (Char,Monoid,Show)
 
 data Str
-instance Monoid Str
+instance Monoid Str -- we can require the type to implement some typeclass
 instance Show Str
 
 splitOn :: Char -> Str -> [Str]
