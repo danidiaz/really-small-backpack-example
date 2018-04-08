@@ -45,7 +45,7 @@ In the cabal file we see:
 
 We are making two different copies of `Lesson2`. Besides giving them names, we
 are using the `requires` clause to *rename the required signature*, making it
-overlap with the name of the appropiate implementation module! Mixing matching
+overlap with the name of the appropiate implementation module. Mixing matching
 is triggered by a coincidence of module and signature names; this is why the
 renaming machinery is important for Backpack.
 
