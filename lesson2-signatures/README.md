@@ -64,10 +64,10 @@ and have imported `Lesson2` without renaming it, because there wouldn't have
 been ambiguity in that case.
 
 One final thing: could have we defined the implementation modules in the
-executable component itself, without putting them in convenience libraries? The
-response is NO. This is a limitation of Backpack: the module that fills a
-signature for a component must be defined in another component (be it a
-convenience library or a completely separate package). 
+executable component itself, without putting them in internal convenience
+libraries? The response is NO. This is a limitation of Backpack: the module
+that fills a signature for a component must be defined in another component (be
+it a convenience library or a completely separate package). 
 
 Compile in this folder with the command:
 
