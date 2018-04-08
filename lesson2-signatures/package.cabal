@@ -38,7 +38,7 @@ library impl-string
 
 library impl-text
     hs-source-dirs: 
-        impl-text
+        impl
     exposed-modules:
         Str.Text
     build-depends:
