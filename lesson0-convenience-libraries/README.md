@@ -1,5 +1,6 @@
-This first lesson is not really about Backpack, but about the "convenience
-libraries" feature of Cabal.
+This first lesson is not really about Backpack, but about the ["internal
+libraries"](https://www.haskell.org/cabal/users-guide/developing-packages.html?highlight=library#library)
+feature of Cabal.
 
 Basically, you can add additional named library sections in your Cabal file,
 besides the default library section.
