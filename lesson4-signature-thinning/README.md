@@ -58,7 +58,7 @@ own signatures. They do two things:
 
 - They supply their own [Foo/Siggy.hsig](lib-foo/Foo/Siggy.hsig) and
   [Bar/Siggy.hsig](lib-bar/Bar/Siggy.hsig) signature files, that carefully
-  export only those functions in which **foo** and **bar** are actually
+  export only those functions in which `foo` and `bar` are actually
   interested. This is where signature thinning takes place. (Why are those
   functions in scope? Because of signature merging.)
 
@@ -66,8 +66,8 @@ own signatures. They do two things:
   the signatures could be more numerous and more complicated. We didn't
   have to re-invent them!
 
-Notice how the [two implementation modules](package.cabal#L16) used with *foo*
-and *bar* only have to implement a part of the whole original **Siggy**
+Notice how the [two implementation modules](package.cabal#L16) used with `foo`
+and `bar` only have to implement a part of the whole original **Siggy**
 signature.
 
 ```
