@@ -1,3 +1,5 @@
+# lesson 4 - signature thinning
+
 Signature thinning (not to confuse with signature merging) is an experimental
 (?) feature inteded to facilitate the reuse of signatures.
 

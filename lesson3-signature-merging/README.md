@@ -1,3 +1,5 @@
+# lesson 3 - signature merging
+
 What happens if in one component we import two libraries "with holes" and the
 "holes" (that is, the signatures) happen to have the same name?
 
