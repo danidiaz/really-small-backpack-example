@@ -27,8 +27,8 @@ include many useful functions for the given abstraction. All the functions that
 make sense for string-like things, for example. But *consumers* of signature
 packages are likely to need only a *subset* of all the functions in the
 signature. And if they depend on the signature wholesale, that will constrain
-the possible implementations, because the implementations will need to provide
-implementation for functions *that aren't needed*.
+the possible implementation modules, because they will have to provide
+implementations for functions *that aren't needed*.
 
 That's where signature thinning comes in. When we depend on a signature-only
 package (and this *only* works for signature-only packages) we have the option

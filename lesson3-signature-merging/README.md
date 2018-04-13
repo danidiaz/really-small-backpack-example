@@ -21,15 +21,15 @@ with holes" [foo](lib-foo) and [bar](lib-bar). Both of them—independently—
 declare a signature **Siggy**. The executable imports both libraries and
 provies an [implementation](lib-impl/Siggy.hs) for the signatures.
 
-Looking at the signatures, we notice that the one from **bar** refers to and
+Looking at the signatures, we notice that the one from **bar** refers to an
 additional **someOtherVal** value. And that is not all: the type **T** is *more
-defined* in the signature froom **bar**. Backpack is smart enough to check that
+defined* in the signature from **bar**. Backpack is smart enough to check that
 the signatures are compatible and merges them. Of course, the implementation
 module must satisfy the merged signature.
 
 (By the way, how come there is no `mixin` section in the
 [`package.cabal`](package.cabal) file? The reason is that I chose the names of
-the signatures and of the implementation package so that they mach from the
+the signatures and of the implementation package so that they match from the
 beginning, so no renaming is necessary.)
 
 Compile in this folder with the command:
