@@ -53,8 +53,8 @@ own signatures. They do two things:
   respective namespaces, and then [publish](package.cabal#L30) those signatures
   in their turn.
 
-  Notice that signatures are renamed using the `requires` clause of the `mixin`
-  section.
+  Notice that signatures are renamed using the `requires` clause of the
+  `mixins` section.
 
 - They supply their own [Foo/Siggy.hsig](lib-foo/Foo/Siggy.hsig) and
   [Bar/Siggy.hsig](lib-bar/Bar/Siggy.hsig) files, that carefully export only
