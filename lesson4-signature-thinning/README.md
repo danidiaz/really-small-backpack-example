@@ -48,12 +48,13 @@ Then we have to "libraries with holes" [foo](package.cabal#L26) and
 [bar](package.cabal#L40). Each of them wants to reutilize `justthesig` in their
 own signatures. They do two things:
 
-- They rename the `Siggy` signature into two signatures `Foo.Siggy` and
-  `Bar.Siggy` that are "under their control" in their respective
-  namespaces, and then publish those signatures in their turn.
+- They [rename](package.cabal#L37) the `Siggy` signature into two signatures
+  `Foo.Siggy` and `Bar.Siggy` that are "under their control" in their
+  respective namespaces, and then [publish](package.cabal#L30) those signatures
+  in their turn.
 
-  Notice that signatures are renamed using the `requires` clause of the
-  `mixin` section.
+  Notice that signatures are renamed using the `requires` clause of the `mixin`
+  section.
 
 - They supply their own [Foo/Siggy.hsig](lib-foo/Foo/Siggy.hsig) and
   [Bar/Siggy.hsig](lib-bar/Bar/Siggy.hsig) files, that carefully export
