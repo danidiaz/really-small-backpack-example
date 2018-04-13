@@ -1,0 +1,7 @@
+signature Siggy where
+
+data T
+
+instance Show T
+
+someVal :: T

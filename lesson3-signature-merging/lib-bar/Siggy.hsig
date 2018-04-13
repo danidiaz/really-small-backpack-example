@@ -1,0 +1,10 @@
+signature Siggy where
+
+data C
+instance Show C
+
+type T = [C]
+
+someVal :: T
+
+someOtherVal :: String
