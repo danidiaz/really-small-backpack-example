@@ -1,7 +1,7 @@
 module Main where
 
-import Foo
-import Bar
+import Foo (printFooVal)
+import Bar (printBarVal)
 
 main :: IO ()
 main = do
