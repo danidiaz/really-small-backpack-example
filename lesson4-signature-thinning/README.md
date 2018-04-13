@@ -57,9 +57,10 @@ own signatures. They do two things:
   section.
 
 - They supply their own [Foo/Siggy.hsig](lib-foo/Foo/Siggy.hsig) and
-  [Bar/Siggy.hsig](lib-bar/Bar/Siggy.hsig) files, that carefully export
-  only those functions in which **foo** and **bar** are actually
-  interested. This is where signature thinning takes place.
+  [Bar/Siggy.hsig](lib-bar/Bar/Siggy.hsig) files, that carefully export only
+  those functions in which **foo** and **bar** are actually interested. This is
+  where signature thinning takes place. (Why are those functions in scope?
+  Because of signature merging.)
 
   In this example it seems that we aren't gaining a lot, but consider that
   the signatures could be more numerous and more complicated. We didn't
