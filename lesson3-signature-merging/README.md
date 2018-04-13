@@ -1,3 +1,25 @@
+What happens if in one component we import two libraries "with holes" and the
+"holes" (that is, the signatures) happen to have the same name?
+
+When we want to import two modules that have the same name (say, [Crypto.Random
+from cryptonite and Crypto.Random from
+crypto-api](https://stackoverflow.com/questions/47110907/what-should-i-do-if-two-modules-share-the-same-name))
+that is a problem. One solution is to use the
+[-XPackageImports](http://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html?highlight=packageimports#extension-PackageImports)
+extension. This is a bit ugly because forces our module code to be aware of
+package names. Another (more elegant, to my mind) solution is to use the module
+renaming capabilities of Backpack taht we saw earlier.
+
+Signatures behave very different from modules in this respect. As long as the
+signatures don't have mutually incompatible definitions (say, functions with
+the same name but incompatible types) the singatures are simply *merged*.
+
+The code in this chapter provide an example of this. We have two "libraries
+with holes" [foo](/lib-foo) and [bar](/lib-bar). Both of them—independently—
+declare a signature **Siggy**. The executable imports both libraries and
+provies an [implementation](/lim-impl/Siggy.hs) for the signatures.
+
+
 In this lesson we will use Backpack to abstract over concrete module
 implementations.
 
