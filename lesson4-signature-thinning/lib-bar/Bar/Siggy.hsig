@@ -1,0 +1,3 @@
+signature Bar.Siggy (barRequiresThis) where
+
+import Prelude () -- when thinning, try to keep the minimum stuff possible in scope

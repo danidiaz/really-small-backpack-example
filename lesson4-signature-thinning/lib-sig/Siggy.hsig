@@ -1,0 +1,6 @@
+signature Siggy where
+
+fooRequiresThis :: Int
+
+barRequiresThis :: Int
+

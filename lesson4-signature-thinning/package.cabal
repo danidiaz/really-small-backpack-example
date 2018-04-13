@@ -1,0 +1,62 @@
+name: lesson4-signature-thinning
+version: 1.0.0.0
+cabal-version: >=2.0
+build-type: Simple
+
+executable lesson4
+    main-is: 
+        Main.hs
+    build-depends:
+        base          >= 4 && < 5,
+        impl,
+        foo,
+        bar
+    default-language: Haskell2010
+
+library impl
+    hs-source-dirs: 
+        lib-impl
+    exposed-modules:
+        Foo.Siggy
+        Bar.Siggy
+    build-depends:
+        base          >= 4 && < 5
+    default-language: Haskell2010
+
+library foo
+    hs-source-dirs: 
+        lib-foo
+    signatures:
+        Foo.Siggy
+    exposed-modules:
+        Foo
+    build-depends:
+        base          >= 4 && < 5,
+        justthesig
+    mixins:
+        justthesig requires (Siggy as Foo.Siggy)
+    default-language: Haskell2010
+
+library bar
+    hs-source-dirs: 
+        lib-bar
+    signatures:
+        Bar.Siggy
+    exposed-modules:
+        Bar
+    build-depends:
+        base          >= 4 && < 5,
+        justthesig
+    mixins:
+        justthesig requires (Siggy as Bar.Siggy)
+    default-language: Haskell2010
+
+library justthesig
+    hs-source-dirs: 
+        lib-sig
+    signatures:
+        Siggy
+    build-depends:
+        base          >= 4 && < 5
+    default-language: Haskell2010
+

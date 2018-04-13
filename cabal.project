@@ -2,4 +2,5 @@ packages: lesson0-convenience-libraries
           lesson1-renaming-modules
           lesson2-signatures
           lesson3-signature-merging
+          lesson4-signature-thinning
 

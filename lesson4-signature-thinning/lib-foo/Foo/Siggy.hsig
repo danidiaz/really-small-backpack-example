@@ -1,0 +1,4 @@
+signature Foo.Siggy (fooRequiresThis) where
+
+import Prelude () -- when thinning, try to keep the minimum stuff possible in scope
+
