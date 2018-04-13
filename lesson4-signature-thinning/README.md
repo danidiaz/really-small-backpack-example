@@ -38,9 +38,35 @@ The mechanism to do it is simple: declare a signature with the same name, but
 only mention in the export list the types and functions in which we are
 interested.
 
-Whew, this is getting mightly confusing, isn't it? Let's go through the example
+Whew, this is getting mighty confusing, isn't it? Let's go through the example
 code.
 
+We have a signature-only library [justthesig](package.cabal#L54). It defines to
+values `fooRequiresThis` and `barRequiresThis`.
+
+Then we have to "libraries with holes" [foo](package.cabal#L26) and
+[bar](package.cabal#L40). Each of them wants to reutilize `justthesig` in their
+own signatures. They do two things:
+
+    - They rename the `Siggy` signature into two signatures `Foo.Siggy` and
+      `Bar.Siggy` that are "under their control" in their respective
+      namespaces, and then publish those signatures in their turn.
+
+      Notice that signatures are renamed using the `requires` clause of the
+      `mixin` section.
+
+    - They supply their own [Foo/Siggy.hsig](lib-foo/Foo/Siggy.hsig) and
+      [Bar/Siggy.hsig](lib-bar/Bar/Siggy.hsig) files, that carefully export
+      only those functions in which **foo** and **bar** are actually
+      interested. This is where signature thinning takes place.
+
+      In this example it seems that we aren't gaining a lot, but consider that
+      the signatures could be more numerous and more complicated. We didn't
+      have to re-invent them!
+
+Notice how the [two implementation modules](package.cabal#L16) used with *foo*
+and *bar* only have to implement a part of the whole original **Siggy**
+signature.
 
 ```
 cabal new-build
