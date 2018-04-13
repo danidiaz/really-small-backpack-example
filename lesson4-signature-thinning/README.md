@@ -62,9 +62,9 @@ own signatures. They do two things:
   interested. This is where signature thinning takes place. (Why are those
   functions in scope? Because of signature merging.)
 
-  In this example it seems that we aren't gaining a lot, but consider that
-  the signatures could be more numerous and more complicated. We didn't
-  have to re-invent them!
+  In this example it seems that we aren't gaining a lot, but consider that the
+  signatures could be bigger and more complicated. We didn't have to re-invent
+  them!
 
 Notice how the [two implementation modules](package.cabal#L16) used with `foo`
 and `bar` only have to implement a part of the whole original **Siggy**
