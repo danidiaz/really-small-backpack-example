@@ -12,7 +12,7 @@ renaming capabilities of Backpack that we saw earlier.
 
 Signatures behave quite differently from modules in this respect. As long as
 the signatures don't have mutually incompatible definitions (say, functions
-with the same name but incompatible types) the singatures are simply *merged*.
+with the same name but incompatible types) the signatures are simply *merged*.
 
 The code in this chapter provide an example of this. We have two "libraries
 with holes" [foo](lib-foo) and [bar](lib-bar). Both of them—independently—
