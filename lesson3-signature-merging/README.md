@@ -15,9 +15,9 @@ signatures don't have mutually incompatible definitions (say, functions with
 the same name but incompatible types) the singatures are simply *merged*.
 
 The code in this chapter provide an example of this. We have two "libraries
-with holes" [foo](/lib-foo) and [bar](/lib-bar). Both of them—independently—
+with holes" [foo](lib-foo) and [bar](lib-bar). Both of them—independently—
 declare a signature **Siggy**. The executable imports both libraries and
-provies an [implementation](/lim-impl/Siggy.hs) for the signatures.
+provies an [implementation](lib-impl/Siggy.hs) for the signatures.
 
 
 In this lesson we will use Backpack to abstract over concrete module
