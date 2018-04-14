@@ -72,6 +72,8 @@ Notice how the [two implementation modules](package.cabal#L16) used with `foo`
 and `bar` only have to implement a part of the whole original **Siggy**
 signature.
 
+Compile in this folder with the command:
+
 ```
 cabal new-build
 ```
