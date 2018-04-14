@@ -1,8 +1,8 @@
 # lesson 1 - convenience libraries
 
 In recent versions of Cabal, there is a new `mixins` section that allows us to
-rename modules (it also allows us to rename signatures, but let's leave that
-for the next lesson.)
+rename modules from our dependencies (it also allows us to rename signatures,
+but let's leave that for the next lesson.)
 
 We can make several renamed copies of the same module. In the example, we make
 to copies of module `Foo` defined in the "foo" convenience library:
