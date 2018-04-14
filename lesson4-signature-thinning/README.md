@@ -11,7 +11,7 @@ signature tailored to their particular needs. In time, these ad-hoc signatures
 will multiply throughout the ecosystem. Many of them will cover the same
 concepts, say, the abstract interface of a string-like type. And yet, they are
 likely to be incompatible, because each author will have used different names
-for the types and functions, or made sligtly different decisions on the types.
+for the types and functions, or made slightly different decisions on the types.
 Furthermore, re-inventing already existing interfaces is wasted effort.
 
 So it would be nice if we could reuse external signature declarations for
