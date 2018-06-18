@@ -1,4 +1,4 @@
-# lesson 1 - convenience libraries
+# lesson 1 - renaming modules
 
 In recent versions of Cabal, there is a new `mixins` section that allows us to
 rename modules from our dependencies (it also allows us to rename signatures,
