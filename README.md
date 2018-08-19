@@ -36,5 +36,5 @@ guide](https://www.haskell.org/cabal/users-guide/nix-local-build-overview.html).
 At the moment, the 'signatures' and 'mixins' sections doesn't seem to be
 documented there.
 
-[picnic: put containers into a backpack](https://kowainik.github.io/posts/2018-08-19-picnic-put-containers-into-a-backpack)
+[picnic: put containers into a backpack](https://kowainik.github.io/posts/2018-08-19-picnic-put-containers-into-a-backpack) [reddit](https://www.reddit.com/r/haskell/comments/98jegn/blog_post_picnic_put_containers_into_a_backpack/) Features an interesting example of abstracting over classes.
 
