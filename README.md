@@ -35,3 +35,6 @@ I wrote a few Backpack tips & tricks
 guide](https://www.haskell.org/cabal/users-guide/nix-local-build-overview.html).
 At the moment, the 'signatures' and 'mixins' sections doesn't seem to be
 documented there.
+
+[picnic: put containers into a backpack](https://kowainik.github.io/posts/2018-08-19-picnic-put-containers-into-a-backpack)
+
