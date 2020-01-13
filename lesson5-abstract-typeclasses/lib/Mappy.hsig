@@ -1,0 +1,10 @@
+{-# LANGUAGE KindSignatures #-}
+signature Mappy where
+
+import Data.Kind (Type)
+
+data Map :: Type -> Type -> Type
+
+class Key k
+
+fromList :: Key k => [(k, v)] -> Map k v
