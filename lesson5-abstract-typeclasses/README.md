@@ -11,8 +11,8 @@ some externally defined typeclasses like `Monoid` or `Show`. But so far we
 haven't written an abstract typeclass which will be given a concrete
 "implementation" later.)
 
-A motivating example: imagine that we want to abstract over a `Map` container using Backpack.
-Sometimes we will want an [ordered
+A motivating example: imagine that in the module `Lesson5` we want to abstract over a `Map` container using Backpack.
+Sometimes we'll want an [ordered
 map](http://hackage.haskell.org/package/containers-0.6.2.1/docs/Data-Map-Strict.html),
 sometimes a [hash
 map](http://hackage.haskell.org/package/unordered-containers-0.2.10.0/docs/Data-HashMap-Strict.html).
@@ -46,9 +46,10 @@ Such definitions require the
 [ConstraintKinds](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html?highlight=constraintkinds#extension-ConstraintKinds)
 extension.
 
-The `Main` module instantiates the library both ways and creates two maps
-with `Int` keys. `Int` has `Eq`, `Ord` and `Hashable` instances, so both
-instantiations compile.
+The logic in `Lesson5` creates a map with `Int` keys. In `Main` we use two
+version of `Lesson5`: `Lesson5Ordered` and `Lesson5Hash`, as instantiated in
+the `.cabal` file.  Because the `Int` type has `Eq`, `Ord` and `Hashable`
+instances, both instantiations of `Lesson5` successfully compile.
 
 Compile in this folder with the command:
 
