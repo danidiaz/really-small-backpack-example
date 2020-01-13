@@ -1,7 +1,7 @@
 {-# LANGUAGE ConstraintKinds #-}
 module MappyOrdered (Key,M.Map,lookup,M.fromList) where
 
-import Prelude (Maybe,Eq)
+import Prelude (Maybe,Eq,Ord)
 import qualified Data.Map.Strict as M
 
 type Key = Ord
