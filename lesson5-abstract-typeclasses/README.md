@@ -28,21 +28,26 @@ In the signature (`Mappy`) we can define an abstract typeclass like
 
 Notice that we don't mention any methods or associated type families, just the class name and its parameters.
 
-Now our abstract lookup function can be written like
+Now our abstract `lookup` and `fromList` functions can be written like
 
-    lookup :: Key k => k -> Map k a -> Maybe a
+    lookup :: (Eq k,Key k) => k -> Map k a -> Maybe a
+    fromList :: (Eq k,Key k) => [(k, v)] -> Map k v
 
-Later, in the implementations (`MappyOrd` and `MappyHash`) we have type synonyms like
+Later, in the implementations (`MappyOrd` and `MappyHash`) we have these mappings from `Key` to actual typeclasses:
 
-    type Key k = Ord k
+    type Key = Ord
 
-or 
+and
 
-    type Key k = (Eq k,Hashable k)
+    type Key = Hashable
 
 Such definitions require the
 [ConstraintKinds](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html?highlight=constraintkinds#extension-ConstraintKinds)
 extension.
+
+(At one point I tried to make the abstract class `Key` to stand for a
+combination of constraints like type `type Key k = (Eq k, Hashable k)` but I
+couldn't make it work.)
 
 The `Main` module instantiates the library both ways and creates two maps
 with `Int` keys. `Int` has `Eq`, `Ord` and `Hashable` instances, so both
