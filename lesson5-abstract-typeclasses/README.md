@@ -70,5 +70,5 @@ combination of constraints, something like
 
     type Key k = (Eq k, Hashable k) 
 
-But I couldn't make it work.
+That would have simplified the signature of `lookup`, but I couldn't make it work.
 
