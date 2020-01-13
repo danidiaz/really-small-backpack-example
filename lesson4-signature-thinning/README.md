@@ -75,10 +75,10 @@ signature.
 Compile in this folder with the command:
 
 ```
-cabal new-build
+cabal v2-build
 ```
 Run the executable with:
 
 ```
-cabal new-run 
+cabal v2-run 
 ```

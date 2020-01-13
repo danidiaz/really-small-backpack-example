@@ -16,17 +16,17 @@ In the example, `foo` is a named convenience library, providing the module `Foo`
 Compile in this folder with the command:
 
 ```
-cabal new-build
+cabal v2-build
 ```
 
 Open a repl in the main library with
 
 ```
-cabal new-repl lib:lesson0-convenience-libraries
+cabal v2-repl lib:lesson0-convenience-libraries
 ```
 
 Open a repl in the convenience library with
 
 ```
-cabal new-repl lib:foo
+cabal v2-repl lib:foo
 ```
