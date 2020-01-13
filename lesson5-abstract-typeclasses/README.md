@@ -105,7 +105,7 @@ What can we do? Turns out that we can add this line to `Mappy`:
 
 and now it compiles.
 
-So: we can define abstract typeclasses, and add then as constraints of methods
+So: we can define abstract typeclasses, and add them as constraints of methods
 of a signature file. We can also demand that certain known types have instances
 of the typeclass.
 
