@@ -7,8 +7,10 @@ It requires [cabal-install 2.2](https://www.haskell.org/cabal/download.html).
 It is a [multi-package project](https://www.haskell.org/cabal/users-guide/nix-local-build.html#developing-multiple-packages). You can build all the packages from this folder using:
 
 ```
-cabal new-build all
+cabal v2-build all
 ```
+
+Any corrections welcome!
 
 # Other resources
 
@@ -33,8 +35,6 @@ I wrote a few Backpack tips & tricks
 
 [The Cabal user
 guide](https://www.haskell.org/cabal/users-guide/nix-local-build-overview.html).
-At the moment, the 'signatures' and 'mixins' sections doesn't seem to be
-documented there.
 
 [picnic: put containers into a backpack](https://kowainik.github.io/posts/2018-08-19-picnic-put-containers-into-a-backpack) [reddit](https://www.reddit.com/r/haskell/comments/98jegn/blog_post_picnic_put_containers_into_a_backpack/) Features an interesting example of abstracting over classes.
 
