@@ -1,6 +1,7 @@
 {-# LANGUAGE ConstraintKinds #-}
 module MappyHash (Key,Map,lookup,M.fromList) where
 
+import Prelude ()
 import qualified Data.HashMap.Strict as M
 import Data.Hashable
 
