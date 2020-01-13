@@ -8,6 +8,6 @@ data Map :: Type -> Type -> Type
 
 class Key k
 
-lookup :: Key k => k -> Map k a -> Maybe a
+lookup :: (Eq k,Key k) => k -> Map k a -> Maybe a
 
-fromList :: Key k => [(k, v)] -> Map k v
+fromList :: (Eq k,Key k) => [(k, v)] -> Map k v
