@@ -19,6 +19,11 @@ readable and gives a good account of the motivations for Backpack.
 
 Edward Z. Yang's [blog](http://blog.ezyang.com/category/haskell/backpack/).
 
+Scott Kilpatrick's
+[thesis](https://www.reddit.com/r/haskell/comments/e7gopg/new_haskell_phd_thesis_on_backback_foundations/).
+Not as directly applicable to the current implementation of Backpack as Edward
+Z. Yang's thesis, but useful insights can be gleaned here.
+
 The [Backpack](https://wiki.haskell.org/Backpack) and [Module
 Signature](https://wiki.haskell.org/Module_signature) entries in the
 Haskellwiki.
