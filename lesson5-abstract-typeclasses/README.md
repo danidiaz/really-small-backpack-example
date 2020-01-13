@@ -72,3 +72,41 @@ combination of constraints, something like
 
 That would have simplified the signature of `lookup`, but I couldn't make it work.
 
+---
+
+**Note #2**: 
+
+Our `Lesson5` module is quite trivial. It merely re-exports `Mappy`. But what
+if we wanted to add some logic; create a map with `Int` keys there? Something
+like
+
+    module Lesson5 (module Mappy,doStuff) where
+
+    import Mappy
+
+    doStuff :: IO ()
+    doStuff = do
+        print $ Mappy.lookup (1::Int) (Mappy.fromList [(1,True),(2,False)])
+
+alas, it doesn't compile:
+
+    lib/Lesson5.hs:10:13: error:
+        • No instance for (Key Int) arising from a use of ‘{Mappy.lookup}’
+
+Why? Well, rememeber that `Lesson5` lives in an indefinite library. It doesn't
+know anything about possible implementations of `Mappy`. (Check its
+dependencies in the `.cabal` file!) Therefore, it can't be sure that `Int` has
+the required `Key` instance. That typeclass could be anything, after all!
+
+What can we do? Turns out that we can add this line to `Mappy`:
+
+    class Key k
+    instance Key Int -- I don't know what "Key" is, but I want Int to have an instance!
+
+and now it compiles.
+
+So: we can define abstract typeclasses, and add then as constraints of methods
+of a signature file. We can also demand that certain known types have instances
+of the typeclass.
+
+(Incidentally, I discovered this by mere trial and error...)
