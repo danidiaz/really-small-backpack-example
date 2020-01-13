@@ -28,6 +28,10 @@ In the signature (`Mappy`) we can define an abstract typeclass like
 
 Notice that we don't mention any methods or associated type families, just the class name and its parameters.
 
+Now our abstract lookup function can be written like
+
+    lookup :: Key k => k -> Map k a -> Maybe a
+
 Later, in the implementations (`MappyOrd` and `MappyHash`) we have type synonyms like
 
     type Key k = Ord k
@@ -36,9 +40,9 @@ or
 
     type Key k = (Eq k,Hashable k)
 
-(Such definitions require the
+Such definitions require the
 [ConstraintKinds](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html?highlight=constraintkinds#extension-ConstraintKinds)
-extension.)
+extension.
 
 The `Main` module instantiates the library both ways and creates two maps
 with `Int` keys. `Int` has `Eq`, `Ord` and `Hashable` instances, so both

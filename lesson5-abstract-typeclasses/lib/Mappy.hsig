@@ -1,10 +1,13 @@
 {-# LANGUAGE KindSignatures #-}
 signature Mappy where
 
+import Prelude (Maybe)
 import Data.Kind (Type)
 
 data Map :: Type -> Type -> Type
 
 class Key k
+
+lookup :: Key k => k -> Map k a -> Maybe a
 
 fromList :: Key k => [(k, v)] -> Map k v
