@@ -1,5 +1,5 @@
 {-# LANGUAGE ConstraintKinds #-}
-module MappyHash (Key,Map,lookup,M.fromList) where
+module MappyHash (Key,Map,lookup,fromList) where
 
 import Prelude (Eq,Maybe)
 import qualified Data.HashMap.Strict as M
