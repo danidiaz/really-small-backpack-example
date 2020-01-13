@@ -94,8 +94,8 @@ alas, it doesn't compile:
         • No instance for (Key Int) arising from a use of ‘{Mappy.lookup}’
 
 Why? Well, rememeber that `Lesson5` lives in an indefinite library. It doesn't
-know anything about possible implementations of `Mappy`. (Check its
-dependencies in the `.cabal` file!) Therefore, it can't be sure that `Int` has
+know anything about possible implementations of `Mappy`—check its
+dependencies in the `.cabal` file! Therefore, it can't be sure that `Int` has
 the required `Key` instance. That typeclass could be anything, after all!
 
 What can we do? Turns out that we can add this line to `Mappy`:
