@@ -6,4 +6,4 @@ import Data.Hashable
 
 type Key = Hashable
 
-type Map = HashMap
+type Map = M.HashMap
