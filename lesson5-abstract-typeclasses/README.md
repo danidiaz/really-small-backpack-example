@@ -8,8 +8,8 @@ Turns out that we can abstract over typeclasses, in a limited way.
 
 (Note that, previously, we have required our abstract datatypes to implement
 some externally defined typeclasses like `Monoid` or `Show`. But so far we
-haven't written an abstract typeclass which will be given a concrete
-"implementation" later.)
+haven't written an abstract typeclass which will be given a concrete definition
+later.)
 
 A motivating example: imagine that we want to abstract over a `Map` container using Backpack.
 Sometimes we will want an [ordered
@@ -65,8 +65,8 @@ cabal v2-run lesson5
 
 **Note**: 
 
-At one point I tried to make the abstract class `Key` to stand for a
-combination of constraints, something like 
+At one point I tried, in an implementation module, to make the abstract class
+`Key` stand for a combination of constraints, something like 
 
     type Key k = (Eq k, Hashable k) 
 
@@ -109,4 +109,20 @@ So: we can define abstract typeclasses, and add them as constraints of methods
 of a signature file. We can also demand that certain known types have instances
 of the typeclass.
 
-(Incidentally, I discovered this by mere trial and error...)
+---
+
+**Note #3**:
+
+The GHC User Guide has a [detailed
+description](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures)
+of what elements can go into a module signature. Definitely worth a read if you plan to use Backpack.
+
+Some interesing tidbits:
+
+- Besides the *abstract* classes we have seen in this lesson, we can also put
+  *concrete* class declarations, with superclasses and methods!
+
+- Same for datatypes: we can write *concrete* datatype definitions, with constructors!
+
+- We can also put closed type families, both abstract and concrete.
+

@@ -28,6 +28,9 @@ The [Backpack](https://wiki.haskell.org/Backpack) and [Module
 Signature](https://wiki.haskell.org/Module_signature) entries in the
 Haskellwiki.
 
+A detailed description in the GHC guide of [what can we put in a module
+signature](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures). 
+
 [Example of an abstract package on Hackage which uses
 signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 [here](https://www.reddit.com/r/haskell/comments/8a5w1n/new_package_unpackedcontainers/).
