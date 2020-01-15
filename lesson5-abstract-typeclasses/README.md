@@ -65,20 +65,26 @@ cabal v2-run lesson5
 
 **Note**: 
 
-At one point I tried, in an implementation module, to make the abstract class
-`Key` stand for a combination of constraints, something like 
+At one point I tried, in the `MappyHash` implementation module, to make the
+abstract class `Key` stand for a combination of constraints, something like 
 
     type Key k = (Eq k, Hashable k) 
 
-That would have simplified the signature of `lookup`, but I couldn't make it work.
+That would have simplified the signatures of `lookup` and `fromList` in
+`Mappy`, as we wouldn't need to put the `Eq` constraints there. But I couldn't
+make it work.
+
+The reason is that Backpack requires type synonyms which define implementations
+to be "eta-reduced". That is, you can write `type Key = Ord` but not `type Key
+k = Ord k`.
 
 ---
 
 **Note #2**: 
 
 Our `Lesson5` module is quite trivial. It merely re-exports `Mappy`. But what
-if we wanted to add some logic; create a map with `Int` keys there? Something
-like
+if we wanted to add some logic there; create a map with `Int` keys, just like
+we did in `Main`? Something like
 
     module Lesson5 (module Mappy,doStuff) where
 
@@ -93,21 +99,23 @@ alas, it doesn't compile:
     lib/Lesson5.hs:10:13: error:
         • No instance for (Key Int) arising from a use of ‘{Mappy.lookup}’
 
-Why? Well, rememeber that `Lesson5` lives in an indefinite library. It doesn't
-know anything about possible implementations of `Mappy`—check its
-dependencies in the `.cabal` file! Therefore, it can't be sure that `Int` has
-the required `Key` instance. That typeclass could be anything, after all!
+Why? Well, consider that—unlike `Main`—`Lesson5` lives in an indefinite
+library. It doesn't know anything about possible implementations of
+`Mappy`—check its dependencies in the `.cabal` file! Therefore, it can't be
+sure that `Int` has the required `Key` instance. That typeclass could be
+anything, after all!
 
-What can we do? Turns out that we can add this line to `Mappy`:
+What can we do? Turns out that we can explicitly require the instance in
+`Mappy`:
 
     class Key k
-    instance Key Int -- I don't know what "Key" is, but I want Int to have an instance!
+    instance Key Int -- I don't know which class "Key" is, but I want Int to have an instance!
 
 and now it compiles.
 
-So: we can define abstract typeclasses, and add them as constraints of methods
-of a signature file. We can also demand that certain known types have instances
-of the typeclass.
+So: we can define abstract typeclasses, and add them as constraints to methods
+of a module signature. We can also demand that certain known types have
+instances of the typeclass.
 
 ---
 
