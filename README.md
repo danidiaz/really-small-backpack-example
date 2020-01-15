@@ -16,7 +16,7 @@ Any corrections welcome!
 
 ## User guides
 
-- A detailed description in the GHC user guide of [what can be put in a module
+- A detailed description in the GHC user guide of [what can be put into a module
 signature](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures).
 This is Backpack seen from the language side.
 
