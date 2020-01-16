@@ -56,5 +56,16 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [A signature for streaming libraries](https://github.com/danidiaz/streamy)
 
-- [picnic: put containers into a backpack](https://kowainik.github.io/posts/2018-08-19-picnic-put-containers-into-a-backpack) [reddit](https://www.reddit.com/r/haskell/comments/98jegn/blog_post_picnic_put_containers_into_a_backpack/) Features an interesting example of abstracting over classes. (See also lesson 5 of this tutorial.)
+- [picnic: put containers into a
+  backpack](https://kowainik.github.io/posts/2018-08-19-picnic-put-containers-into-a-backpack)
+  [reddit](https://www.reddit.com/r/haskell/comments/98jegn/blog_post_picnic_put_containers_into_a_backpack/)
+  Features an interesting example of abstracting over classes. (See also lesson
+  5 of this tutorial.)
+
+- [a blog post about common stanzas in .cabal
+  files](https://vrom911.github.io/blog/common-stanzas). Not directly related
+  to Backpack, but both `build-depends` and `mixins` fields can be put into
+  common stanzas, which can then be imported by multiple libraries/executables
+  in the package. This can help avoid duplication in the .cabal file. [An
+  example](https://stackoverflow.com/a/59740286/1364288).
 
