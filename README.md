@@ -69,3 +69,5 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
   in the package. This can help avoid duplication in the .cabal file. [An
   example](https://stackoverflow.com/a/59740286/1364288).
 
+- [using Backpack to get around problems with overlapping
+  instances](https://www.reddit.com/r/haskell/comments/f3b0ie/ann_acts_semigroup_actions_groups_and_torsors/fhk4wpw/)
