@@ -25,6 +25,14 @@ library lib-logic-indef
     exposed-modules:
         LogicIndef
 
+library lib-logic-mtl
+    import: common
+    hs-source-dirs: lib-logic-mtl
+    exposed-modules:
+        LogicMTL
+
+
+
 
 --        text          >= 1.2,
 --         lesson2-signatures,
