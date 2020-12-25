@@ -31,16 +31,16 @@ an exercise.
 Compile in this folder with the command:
 
 ```
-cabal v2-build
+cabal build
 ```
 Open a repl in the main library with
 
 ```
-cabal v2-repl lib:lesson1-renaming-modules
+cabal repl lib:lesson1-renaming-modules
 ```
 Open a repl in the convenience library with
 
 ```
-cabal v2-repl lib:foo
+cabal repl lib:foo
 ```
 

@@ -2,12 +2,12 @@
 
 This is a small tutorial on the very basics of the Backpack module system.
 
-It requires [cabal-install 2.2](https://www.haskell.org/cabal/download.html). 
+It requires [cabal-install >= 3.4](https://www.haskell.org/cabal/download.html). 
 
 It is a [multi-package project](https://www.haskell.org/cabal/users-guide/nix-local-build.html#developing-multiple-packages). You can build all the packages from this folder using:
 
 ```
-cabal v2-build all
+cabal build all
 ```
 
 Any corrections welcome!

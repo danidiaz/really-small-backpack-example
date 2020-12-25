@@ -35,10 +35,10 @@ beginning, so no renaming is necessary.)
 Compile in this folder with the command:
 
 ```
-cabal v2-build
+cabal build
 ```
 Run the executable with:
 
 ```
-cabal v2-run 
+cabal run 
 ```

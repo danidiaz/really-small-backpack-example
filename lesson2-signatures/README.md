@@ -74,10 +74,10 @@ it a convenience library or a completely separate package).
 Compile in this folder with the command:
 
 ```
-cabal v2-build
+cabal build
 ```
 Run the executable with:
 
 ```
-cabal v2-run lesson2
+cabal run lesson2
 ```

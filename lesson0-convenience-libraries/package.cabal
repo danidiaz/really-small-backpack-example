@@ -1,4 +1,4 @@
-cabal-version: 2.2
+cabal-version: 3.0
 name: lesson0-convenience-libraries
 version: 1.0.0.0
 build-type: Simple
