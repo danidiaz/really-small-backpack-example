@@ -16,9 +16,9 @@ The logic is imported and run by the [**lesson6** executable](./Main.hs). In ord
 
 Actually, for purposes of comparison, the executable runs two other "program logics" from these libraries:
 
-- **lib-logic-mtl**: The monad stack is abstracted using MTL classes; concrete transformers are only specified in the **lesson6** executable. 
+- [**lib-logic-mtl**](./lib-logic-mtl): The monad stack is abstracted using MTL classes; concrete transformers are only specified in the **lesson6** executable. 
 
-- **lib-logic-trans**: The monad stack is not abstracted at all; concrete transformers are used in the signature.
+- [**lib-logic-trans**](./lib-logic-trans): The monad stack is not abstracted at all; concrete transformers are used in the signature.
 
 In all three cases, the provided function (`countUp`) is *exactly the same*, the only thing that varies is if/how the concrete monad stack is abstracted. 
 
@@ -179,7 +179,7 @@ The Core generated for **lib-logic-indef** instantiated with **lib-logic-impl** 
 
 ## A benchmark
 
-A benchmark is included which compares the three versions of the logic. It can be run with:
+A [criterion benchmark](./benchmarks/benchmarks.hs) is included which compares the three versions of the program logic. It can be run with:
 
     cabal bench
 
