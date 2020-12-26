@@ -14,16 +14,19 @@ common common
     ghc-options: -O2 
     -- https://www.stephendiehl.com/posts/ghc_03.html
     -- ghc-options: -O2 -ddump-simpl -dsuppress-idinfo -dsuppress-coercions -dsuppress-type-applications -dsuppress-uniques -dsuppress-module-prefixes
-
-executable lesson6
-    import: common
-    main-is: 
-        Main.hs
+    
+common all-logics
     build-depends:
         lib-logic-mtl,
         lib-logic-trans,
         lib-logic-indef,
         lib-logic-impl,
+
+executable lesson6
+    import: common, 
+            all-logics,
+    main-is: 
+        Main.hs
 
 library lib-logic-mtl
     import: common
@@ -50,4 +53,14 @@ library lib-logic-impl
     hs-source-dirs: lib-logic-impl
     exposed-modules:
         LogicIndef.Monad
+
+-- https://cabal.readthedocs.io/en/3.4/cabal-package.html#benchmarks
+benchmark benchy
+  import: common, 
+          all-logics,
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: benchmarks
+  main-is:        benchmarks.hs
+  build-depends:
+        criterion ^>= 1.5,
 
