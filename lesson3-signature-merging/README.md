@@ -26,7 +26,7 @@ additional **someOtherVal** value. And that is not all: the type **T** is *more
 defined* in the signature from **bar**: 
 
 - **lib-foo** has `data T`, wholly abstract.
-- **lib-bar** has `type T = [C]` more defined while still being partly abstract.
+- **lib-bar** has `type T = [C]` more defined while still being partly abstract (because of `C`).
 
 Backpack is smart enough to check that
 the signatures are compatible and merges them. Of course, the implementation
