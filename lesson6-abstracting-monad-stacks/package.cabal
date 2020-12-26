@@ -21,25 +21,37 @@ common all-logics
         lib-logic-trans,
         lib-logic-indef,
         lib-logic-impl,
+	-- There's no need for a mixins section, because the signature and the
+    -- implementation have the same name, so the matching is automatic.
 
+-- The main executable, which runs each version of the program logic.
 executable lesson6
     import: common, 
             all-logics,
     main-is: 
         Main.hs
 
+-- A version of the program logic which uses MTL classes.
+-- Concrete transformers are only specified in the main executable.
 library lib-logic-mtl
     import: common
     hs-source-dirs: lib-logic-mtl
     exposed-modules:
         LogicMTL
 
+-- A version of the program logic which uses concrete transfomers,
+-- with no option for multiple implementations.
 library lib-logic-trans
     import: common
     hs-source-dirs: lib-logic-trans
     exposed-modules:
         LogicTrans
 
+-- A version of the program logic which abstract the concrete
+-- transformers using a module signature.
+-- Components which depend on this library must either provide an
+-- implementation module or be indefinite themselves.
+-- Notice that the signature uses MTL classes.
 library lib-logic-indef
     import: common
     hs-source-dirs: lib-logic-indef
@@ -48,10 +60,14 @@ library lib-logic-indef
     exposed-modules:
         LogicIndef
 
+-- A possible implementation for the module signature.
+-- Notice that we do not depend on the library which provides the signature,
+-- implementation modules need not be aware that a signature exists!
 library lib-logic-impl
     import: common
     hs-source-dirs: lib-logic-impl
     exposed-modules:
+		-- Same name as the signature, to simplify matching.
         LogicIndef.Monad
 
 -- https://cabal.readthedocs.io/en/3.4/cabal-package.html#benchmarks
