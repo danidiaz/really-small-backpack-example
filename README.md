@@ -20,12 +20,11 @@ Any corrections welcome!
 signature](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures).
 This is Backpack seen from the language side.
 
-- [The Cabal user
-guide](https://www.haskell.org/cabal/users-guide/nix-local-build-overview.html),
+- [The Cabal user guide](https://cabal.readthedocs.io/en/3.4/index.html),
 in particular the sections about
-[signatures](https://www.haskell.org/cabal/users-guide/developing-packages.html?highlight=backpack#pkg-field-library-signatures)
+[signatures](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-library-signatures)
 and
-[mixins](https://www.haskell.org/cabal/users-guide/developing-packages.html?highlight=backpack#pkg-field-mixins).
+[mixins](https://www.haskell.org/cabal/users-guide/developing-packages.html?highlight=backpack#pkg-field-mixin://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins).
 This is Backpack seen from the package manager side.
 
 ## The theory behind Backpack
