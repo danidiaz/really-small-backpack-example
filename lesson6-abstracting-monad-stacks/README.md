@@ -2,7 +2,7 @@
 
 This lesson is motivated by the interesting post [Monad Transformers and Effects with Backpack](https://blog.ocharles.org.uk/posts/2020-12-23-monad-transformers-and-effects-with-backpack.html) by **ocharles** and the [subsequent Reddit discussion](https://www.reddit.com/r/haskell/comments/kjer0o/monad_transformers_and_effects_with_backpack/).
 
-I want to propose a more coarse-grained example of how abstract monad stacks using Backpack. The idea is as follows: instead of having fine-grained [module signatures](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures) for individual transformers, write a single module signature describing the monad in which your program logic should run. That signature can require constraints like `MonadReader` or `MonadState` from the abstract monad.
+I want to propose a more coarse-grained example of how abstract monad stacks using Backpack. The idea is as follows: instead of having fine-grained [module signatures](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures) for individual transformers, write a single module signature describing the monad in which your program logic should run. That [signature](./lib-logic-indef/LogicIndef/Monad.hsig) can require constraints like `MonadReader` or `MonadState` from the abstract monad.
 
 Then, in the implementation module, assemble your whole monad stack using garden-variety transformers from the ["transformers"](http://hackage.haskell.org/package/transformers) package.
 
