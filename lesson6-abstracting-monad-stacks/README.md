@@ -14,13 +14,13 @@ The logic is imported and run by the **lesson6** executable. In order to run it:
 
     cabal run lesson6
 
-Actually, for purposes of comparison, the executable runs two other "logics" from these libraries:
+Actually, for purposes of comparison, the executable runs two other "program logics" from these libraries:
 
 - **lib-logic-mtl**: The monad stack is abstracted using MTL classes; concrete transformers are only specified in the **lesson6** executable. 
 
 - **lib-logic-trans**: The monad stack is not abstracted at all; concrete transformers are used in the signature.
 
-In all three cases, the program is exactly the same, the only thing that varies is if/how the concrete monad stack is abstracted. 
+In all three cases, the provided function (`countUp`) is *exactly the same*, the only thing that varies is if/how the concrete monad stack is abstracted. 
 
 ## Comparing the generated Core
 
