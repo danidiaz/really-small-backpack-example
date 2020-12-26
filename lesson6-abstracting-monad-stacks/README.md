@@ -1,7 +1,5 @@
 # lesson 6 - abstracting monad stacks
 
-*UNDER CONSTRUCTION*
-
 This lesson is motivated by the interesting post [Monad Transformers and Effects with Backpack](https://blog.ocharles.org.uk/posts/2020-12-23-monad-transformers-and-effects-with-backpack.html) by **ocharles** and the [subsequent Reddit discussion](https://www.reddit.com/r/haskell/comments/kjer0o/monad_transformers_and_effects_with_backpack/).
 
 I want to propose a more coarse-grained example of how abstract monad stacks using Backpack. The idea is as follows: instead of having fine-grained [module signatures](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures) for individual transformers, write a single module signature describing the monad in which your program logic should run. That signature can require constraints like `MonadReader` or `MonadState` from the abstract monad.
@@ -184,4 +182,15 @@ A [criterion benchmark](./benchmarks/benchmarks.hs) is included which compares t
     cabal bench
 
 As expected, the MTL version of the logic runs much slower. But remember: we aren't inlining any of the `countUp` functions!
+
+## Am I obligated to use the same abstract monad throughout my logic?
+
+What if I have different functions in my program logic, each of them requiring different constraints from the monad? Say, a function which requires `MonadState` and another function which requires both `MonadState` and `MonadReader`. When using module signatures, how to avoid forcing all the functions to live in the same monad?
+
+I haven't tried it yet, but perhaps a possible solution would be to list
+more than one abstract monad in the module signature, and also define abstract
+[monad morphisms](https://www.reddit.com/r/haskell/comments/kjer0o/monad_transformers_and_effects_with_backpack/gh0jnlh/) between them, to be provided by the implementation. 
+
+I'm not sure how well would it work. Calls between functions of your program logic would become more cumbersome because we would need to apply the morphisms.
+
 
