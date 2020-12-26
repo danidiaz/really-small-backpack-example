@@ -2,9 +2,9 @@
 
 This is a small tutorial on the very basics of the Backpack module system.
 
-It requires [cabal-install >= 3.4](https://www.haskell.org/cabal/download.html). 
+It requires [cabal-install >= 3.4](https://www.haskell.org/cabal/). 
 
-It is a [multi-package project](https://www.haskell.org/cabal/users-guide/nix-local-build.html#developing-multiple-packages). You can build all the packages from this folder using:
+It is a [multi-package project](https://cabal.readthedocs.io/en/3.4/nix-local-build.html#developing-multiple-packages). You can build all the packages from this folder using:
 
 ```
 cabal build all
@@ -71,3 +71,6 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [using Backpack to get around problems with overlapping
   instances](https://www.reddit.com/r/haskell/comments/f3b0ie/ann_acts_semigroup_actions_groups_and_torsors/fhk4wpw/)
+
+- [Monad Transformers and Effects with Backpack](https://blog.ocharles.org.uk/posts/2020-12-23-monad-transformers-and-effects-with-backpack.html). [reddit](https://www.reddit.com/r/haskell/comments/kjer0o/monad_transformers_and_effects_with_backpack/).
+
