@@ -23,7 +23,12 @@ provies an [implementation](lib-impl/Siggy.hs) for the signatures.
 
 Looking at the signatures, we notice that the one from **bar** refers to an
 additional **someOtherVal** value. And that is not all: the type **T** is *more
-defined* in the signature from **bar**. Backpack is smart enough to check that
+defined* in the signature from **bar**: 
+
+- **lib-foo** has `data T`, wholly abstract.
+- **lib-bar** has `type T = [C]` more defined while still being partly abstract.
+
+Backpack is smart enough to check that
 the signatures are compatible and merges them. Of course, the implementation
 module must satisfy the merged signature.
 
