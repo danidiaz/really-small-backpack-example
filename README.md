@@ -24,7 +24,7 @@ This is Backpack seen from the language side.
 in particular the sections about
 [signatures](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-library-signatures)
 and
-[mixins](https://www.haskell.org/cabal/users-guide/developing-packages.html?highlight=backpack#pkg-field-mixin://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins).
+[mixins](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins).
 This is Backpack seen from the package manager side.
 
 ## The theory behind Backpack
