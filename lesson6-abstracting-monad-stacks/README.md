@@ -12,7 +12,7 @@ The logic is imported and run by the [**lesson6** executable](./Main.hs). In ord
 
     cabal run lesson6
 
-Actually, for purposes of comparison, the executable runs two other "program logics" from these libraries:
+For purposes of comparison, the executable runs two other "program logics" from these libraries:
 
 - [**lib-logic-mtl**](./lib-logic-mtl): The monad stack is abstracted using MTL classes; concrete transformers are only specified in the **lesson6** executable. 
 

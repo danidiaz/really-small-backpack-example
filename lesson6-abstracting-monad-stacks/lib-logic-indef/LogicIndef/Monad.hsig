@@ -3,9 +3,9 @@
 {-# LANGUAGE FlexibleInstances #-}
 signature LogicIndef.Monad where
 
-import Control.Monad.Reader
-import Control.Monad.State.Strict
-import Data.Kind
+import Control.Monad.Reader (MonadReader)
+import Control.Monad.State.Strict (MonadState)
+import Data.Kind (Type)
 
 data M :: Type -> Type
 instance Functor M
