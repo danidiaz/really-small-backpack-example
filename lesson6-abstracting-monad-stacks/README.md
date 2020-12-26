@@ -181,7 +181,7 @@ A [criterion benchmark](./benchmarks/benchmarks.hs) is included which compares t
 
     cabal bench
 
-As expected, the MTL version of the logic runs much slower. But remember: we aren't inlining any of the `countUp` functions!
+As expected, the MTL version of the logic runs much slower. But remember: *we aren't inlining any of the `countUp` functions*!
 
 ## Am I obligated to use the same abstract monad throughout my logic?
 
