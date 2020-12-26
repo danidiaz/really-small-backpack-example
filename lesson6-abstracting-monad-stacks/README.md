@@ -16,7 +16,7 @@ For purposes of comparison, the executable runs two other "program logics" from 
 
 - [**lib-logic-mtl**](./lib-logic-mtl): The monad stack is abstracted using MTL classes; concrete transformers are only specified in the **lesson6** executable. 
 
-- [**lib-logic-trans**](./lib-logic-trans): The monad stack is not abstracted at all; concrete transformers are used in the signature.
+- [**lib-logic-trans**](./lib-logic-trans): The monad stack is not abstracted at all; concrete transformers are used in function signatures.
 
 In all three cases, the provided function (`countUp`) is *exactly the same*, the only thing that varies is if/how the concrete monad stack is abstracted. 
 
