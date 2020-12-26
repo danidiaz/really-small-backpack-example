@@ -8,7 +8,7 @@ I want to propose a more coarse-grained example of how abstract monad stacks usi
 
 Then, in the implementation module, assemble your whole monad stack using garden-variety transformers from the ["transformers"](http://hackage.haskell.org/package/transformers) package.
 
-In this package, library **lib-logic-indef** is the program logic which depends on a module signature `LogicIndef.Monad`, and library **lib-logic-impl** provides the implementation of the package. 
+In this package, library **lib-logic-indef** is the program logic which depends on a module signature `LogicIndef.Monad`. And library **lib-logic-impl** provides the implementation of the package. 
 
 The logic is imported and run by the **lesson6** executable. In order to run it:
 
