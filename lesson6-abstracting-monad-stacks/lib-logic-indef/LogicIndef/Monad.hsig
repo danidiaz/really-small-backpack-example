@@ -3,9 +3,8 @@
 {-# LANGUAGE FlexibleInstances #-}
 signature LogicIndef.Monad where
 
-import Control.Monad.Writer
 import Control.Monad.Reader
-import Control.Monad.State
+import Control.Monad.State.Strict
 import Data.Kind
 
 data M :: Type -> Type
@@ -13,6 +12,5 @@ instance Functor M
 instance Applicative M
 instance Monad M
 instance MonadReader Int M
-instance MonadWriter (Sum Int) M
 instance MonadState Int M
 

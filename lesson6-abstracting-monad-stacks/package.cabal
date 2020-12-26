@@ -5,17 +5,36 @@ build-type: Simple
 
 -- https://vrom911.github.io/blog/common-stanzas
 -- https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends
+-- https://www.stephendiehl.com/posts/ghc_03.html
 common common
     build-depends:
         base          >= 4 && < 5,
         transformers  ^>= 0.5,
-        mtl           ^>= 2.2
+        mtl           ^>= 2.2,
     default-language: Haskell2010
+    ghc-options: -O2
 
 executable lesson6
     import: common
     main-is: 
         Main.hs
+    build-depends:
+        lib-logic-mtl,
+        lib-logic-trans,
+        lib-logic-indef,
+        lib-logic-impl,
+
+library lib-logic-mtl
+    import: common
+    hs-source-dirs: lib-logic-mtl
+    exposed-modules:
+        LogicMTL
+
+library lib-logic-trans
+    import: common
+    hs-source-dirs: lib-logic-trans
+    exposed-modules:
+        LogicTrans
 
 library lib-logic-indef
     import: common
@@ -25,50 +44,9 @@ library lib-logic-indef
     exposed-modules:
         LogicIndef
 
-library lib-logic-mtl
+library lib-logic-impl
     import: common
-    hs-source-dirs: lib-logic-mtl
+    hs-source-dirs: lib-logic-impl
     exposed-modules:
-        LogicMTL
-
-
-
-
---        text          >= 1.2,
---         lesson2-signatures,
---         impl-string,
---         impl-text
---     mixins:
---         lesson2-signatures (Lesson2 as Lesson2.String) requires (Str as Str.String), 
---         lesson2-signatures (Lesson2 as Lesson2.Text) requires (Str as Str.Text) 
--- 
--- library -- the main library
---     hs-source-dirs: lib
---     signatures:
---         Str
---     exposed-modules:
---         Lesson2
---     build-depends:
---         base          >= 4 && < 5
---     default-language: Haskell2010
--- 
--- library impl-string
---     hs-source-dirs: 
---         impl
---     exposed-modules:
---         Str.String
---     build-depends:
---         base          >= 4 && < 5,
---         split         >= 0.2.3
---     default-language: Haskell2010
--- 
--- library impl-text
---     hs-source-dirs: 
---         impl
---     exposed-modules:
---         Str.Text
---     build-depends:
---         base          >= 4 && < 5,
---         text          >= 1.2
---     default-language: Haskell2010
+        LogicIndef.Monad
 

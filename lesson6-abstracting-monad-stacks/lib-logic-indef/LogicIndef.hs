@@ -1,21 +1,16 @@
 {-# LANGUAGE FlexibleContexts #-}
 module LogicIndef where
 
-import LogicIndef.Monad
-
-import Control.Monad.Writer
 import Control.Monad.Reader
-import Control.Monad.State
+import Control.Monad.State.Strict
+import LogicIndef.Monad (M) -- this is the signature
 
 countUp :: M ()
 countUp = do
-    limit <- ask
-    iteration <- get
-    if iteration < limit
-        then do
-            tell (Sum 1)
-            modify' succ
-            countUp
-        else return ()
-
-
+  limit <- ask
+  iteration <- get
+  if iteration < limit
+    then do
+      modify' succ
+      countUp
+    else return ()
