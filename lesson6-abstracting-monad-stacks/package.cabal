@@ -12,6 +12,7 @@ common common
         mtl           ^>= 2.2,
     default-language: Haskell2010
     ghc-options: -O2 
+    -- https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html
     -- https://www.stephendiehl.com/posts/ghc_03.html
     -- ghc-options: -O2 -ddump-simpl -dsuppress-idinfo -dsuppress-coercions -dsuppress-type-applications -dsuppress-uniques -dsuppress-module-prefixes
     
