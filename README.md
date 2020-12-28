@@ -45,6 +45,8 @@ Z. Yang's thesis, but useful insights can be gleaned here.
 Signature](https://wiki.haskell.org/Module_signature) entries in the
 Haskellwiki.
 
+- [GHC proposal](https://github.com/ezyang/ghc-proposals/blob/backpack/proposals/0000-backpack.rst)
+
 - I wrote a few Backpack tips & tricks
 [here](https://medium.com/@danidiaz/backpacking-tips-3adb727bb8f7) and
 [here](https://medium.com/@danidiaz/backpacking-tips-ii-47fa86e5bf2).
