@@ -22,7 +22,7 @@ The `lookup` functions for each map will have different constraints:
 in the other. What can we do to put both functions under the same abstract
 definition in the signature?
 
-In the signature (`Mappy`) we can define an abstract typeclass like
+In the signature [`Mappy`](./lib/Mappy.hsig) we can define an abstract typeclass like
 
     class Key k
 
