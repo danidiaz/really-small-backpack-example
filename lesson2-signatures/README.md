@@ -20,7 +20,7 @@ concrete implementation module.
 
 This means that the library has a "hole" with a "shape" defined by `Str`. 
 
-This package also defines an executable named "lesson2" which wants to use the
+This package also defines an executable named ["lesson2"](./Main.hs) that wants to use the
 library. Use it with two different string types, in fact. How to do this?
 
 First we must find or define modules that give concrete implementation to the
