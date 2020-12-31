@@ -46,7 +46,7 @@ Such definitions require the
 [ConstraintKinds](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html?highlight=constraintkinds#extension-ConstraintKinds)
 extension.
 
-The `Main` module instantiates the library both ways and creates two maps
+The [`Main`](./Main.hs) module instantiates the library both ways and creates two maps
 with `Int` keys. `Int` has `Eq`, `Ord` and `Hashable` instances, so both
 instantiations compile.
 
