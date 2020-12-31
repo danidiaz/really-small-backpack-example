@@ -61,9 +61,7 @@ Run the executable with:
 cabal run lesson5
 ```
 
----
-
-**Note**: 
+## What about composite constraints?
 
 At one point I tried, in the `MappyHash` implementation module, to make the
 abstract class `Key` stand for a combination of constraints, something like 
@@ -78,9 +76,10 @@ The reason is that Backpack requires type synonyms which define implementations
 to be "eta-reduced". That is, you can write `type Key = Ord` but not `type Key
 k = Ord k`.
 
----
+Maybe some kind of [constraint synonym trick](https://kcsongor.github.io/opaque-constraint-synonyms/) could help here?
 
-**Note #2**: 
+
+## Abstract typeclasses and concrete types
 
 Our [`Lesson5`](./lib/Lesson5.hs) module is quite trivial and not very useful. It merely re-exports `Mappy`. But what
 if we wanted to add some logic there; create a map with `Int` keys just like
@@ -117,9 +116,7 @@ So: we can define abstract typeclasses, and add them as constraints to methods
 of a module signature. We can also demand that certain known types have
 instances of the typeclass.
 
----
-
-**Note #3**:
+## Other stuff that can go into module signatures
 
 The GHC User Guide has a [detailed
 description](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures)
@@ -128,9 +125,9 @@ of what elements can go into a module signature. Definitely worth a read if you 
 Some interesing tidbits:
 
 - Besides the *abstract* classes we have seen in this lesson, we can also put
-  *concrete* class declarations, with superclasses and methods!
+  *concrete* class declarations, with superclasses and methods! Kind of surprising.
 
-- Same for datatypes: we can write *concrete* datatype definitions, with constructors!
+- Same for datatypes: we can write *concrete* datatype definitions, with constructors! Also kind of surprising.
 
 - We can also put closed type families, both abstract and concrete.
 
