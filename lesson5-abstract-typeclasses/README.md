@@ -98,7 +98,7 @@ alas, it doesn't compile:
     lib/Lesson5.hs:10:13: error:
         • No instance for (Key Int) arising from a use of ‘{Mappy.lookup}’
 
-Why? Well, consider that, unlike `Main`, `Lesson5` lives in an indefinite
+Why? Well, consider that, unlike [`Main`](./Main.hs), [`Lesson5`](./lib/Lesson5.hs) lives in an indefinite
 library. It doesn't know anything about possible implementations of
 `Mappy`—check its dependencies in the [`.cabal`](./package.cabal) file! Therefore, it can't be
 sure that `Int` has the required `Key` instance. That typeclass could be
