@@ -1,6 +1,6 @@
 # lesson 1 - renaming modules
 
-In recent versions of Cabal, there is a new `mixins` section that allows us to
+In recent versions of Cabal, there is a new [`mixins`](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins) section that allows us to
 rename modules from our dependencies (it also allows us to rename signatures,
 but let's leave that for the next lesson.)
 
