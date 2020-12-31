@@ -1,6 +1,6 @@
 # lesson 5 - abstract typeclasses
 
-Over which entities, exactly, can be abstract in a signature?
+Over which entities, exactly, can we abstract in a signature?
 
 In previous lessons we have abstracted over datatypes and standalone functions. Can we abstract over anything else?
 
