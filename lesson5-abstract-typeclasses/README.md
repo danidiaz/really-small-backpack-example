@@ -34,7 +34,7 @@ Now our abstract `lookup` and `fromList` functions can be written like
 
     fromList :: (Eq k,Key k) => [(k, v)] -> Map k v
 
-Later, in the implementations (`MappyOrd` and `MappyHash`) we have these mappings from `Key` to actual typeclasses:
+Later, in the implementations ([`MappyOrdered`](./impl/MappyOrdered.hs) and [`MappyHash`](./impl/MappyHash.hs)) we have these mappings from `Key` to actual typeclasses:
 
     type Key = Ord
 
