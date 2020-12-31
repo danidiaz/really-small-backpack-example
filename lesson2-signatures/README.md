@@ -14,7 +14,7 @@ API with new type parameters or typeclass constraints. How to do this?
 We have defined an [abstract
 signature](https://wiki.haskell.org/Module_signature) [`Str`](./lib/Str.hsig)
 with declares only those operations that are needed for implementing the
-templating functionality. The signature is declared in the "signatures:"
+templating functionality. The signature is declared in the ["signatures:"](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-library-signatures)
 section of the Cabal file. `Lesson2` imports that signature instead of any
 concrete implementation module. 
 
