@@ -83,7 +83,7 @@ k = Ord k`.
 **Note #2**: 
 
 Our [`Lesson5`](./lib/Lesson5.hs) module is quite trivial and not very useful. It merely re-exports `Mappy`. But what
-if we wanted to add some logic there; create a map with `Int` keys, just like
+if we wanted to add some logic there; create a map with `Int` keys just like
 we did in `Main`, but still keeping the map abstract? Something like
 
     module Lesson5 (module Mappy,doStuff) where
