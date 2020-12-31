@@ -101,7 +101,7 @@ alas, it doesn't compile:
 
 Why? Well, consider that, unlike `Main`, `Lesson5` lives in an indefinite
 library. It doesn't know anything about possible implementations of
-`Mappy`—check its dependencies in the `.cabal` file! Therefore, it can't be
+`Mappy`—check its dependencies in the [`.cabal`](./package.cabal) file! Therefore, it can't be
 sure that `Int` has the required `Key` instance. That typeclass could be
 anything, after all!
 
