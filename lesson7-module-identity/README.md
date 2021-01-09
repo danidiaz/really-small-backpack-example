@@ -17,7 +17,7 @@ In the executable, the `Pair1` and `Pair2` modules are produced by
 the same combination of module signature and implementation module.
 
 The big question is: *are the types and functions in `Pair1` and `Pair2`
-mutually compatible?* They define pair types along with functions for building
+mutually compatible?* Those modules define pair types along with functions for building
 and extracting the components of a pair. What [happens](./Main.hs) if we build
 a pair from `Pair1` and try to extract its first component using a function
 from `Pair2`?
