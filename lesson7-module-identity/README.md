@@ -2,7 +2,7 @@
 
 As we have seen, modules in "indefinite" packages can depend on module
 signatures. Consumers of an indefinite package can "instantiate" it by
-depending both the indefinite package and a suitable implementation of its
+depending on both the indefinite package and a suitable implementation of its
 signatures—possibly requiring some `mixins:` shenanigans to ensure a happy
 match.
 
@@ -21,6 +21,9 @@ mutually compatible?* They define pair types along with functions for building
 and extracting the components of a pair. What [happens](./Main.hs) if we build
 a pair from `Pair1` and try to extract its first component using a function
 from `Pair2`?
+
+    main :: IO ()
+    main = print $ Pair1.pairFst $ Pair2.buildPair 1 2
 
 Different module systems (Backpack, or [ML](https://people.mpi-sws.org/~dreyer/thesis/main.pdf)'s) have different answers to this question:
 
