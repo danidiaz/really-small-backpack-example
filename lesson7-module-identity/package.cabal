@@ -1,0 +1,39 @@
+cabal-version: 3.0
+name: lesson7-module-identity
+version: 1.0.0.0
+build-type: Simple
+
+-- https://vrom911.github.io/blog/common-stanzas
+-- https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends
+common common
+    build-depends:
+        base          >= 4 && < 5,
+    default-language: Haskell2010
+    ghc-options: -O2 
+    
+executable lesson7
+    import: common, 
+    main-is: 
+        Main.hs
+    build-depends:
+        lib-pair-indef,
+        lib-pair-impl
+    mixins:
+        lib-pair-indef (Pair as Pair1) requires (Pair.Element as Pair.Element1),
+        lib-pair-indef (Pair as Pair2) requires (Pair.Element as Pair.Element2),
+        lib-pair-impl (Pair.Element as Pair.Element1), 
+        lib-pair-impl (Pair.Element as Pair.Element2), 
+
+library lib-pair-indef
+    import: common
+    hs-source-dirs: lib-pair-indef
+    exposed-modules:
+        Pair
+    signatures:
+        Pair.Element
+
+library lib-pair-impl
+    import: common
+    hs-source-dirs: lib-pair-impl
+    exposed-modules:
+        Pair.Element

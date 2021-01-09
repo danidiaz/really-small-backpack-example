@@ -1,0 +1,8 @@
+{-# LANGUAGE KindSignatures #-}
+
+signature Pair.Element where
+
+import Data.Kind (Type)
+
+data Element :: Type
+

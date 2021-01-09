@@ -5,4 +5,5 @@ packages: lesson0-convenience-libraries
           lesson4-signature-thinning
           lesson5-abstract-typeclasses
           lesson6-abstracting-monad-stacks
+          lesson7-module-identity
 
