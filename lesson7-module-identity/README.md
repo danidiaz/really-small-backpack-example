@@ -12,7 +12,7 @@ modules which have different names but which, if we trace back the chains of
 module and signature renamings, actually correspond to the *exact same
 combination* of indefinite modules and signatures.
 
-The [cabal file](./package.cabal) for this lesson is a (simple) example.
+The [cabal file](./package.cabal) for this lesson offers a simple example.
 In the executable, the `Pair1` and `Pair2` modules are produced by
 the same combination of module signature and implementation module.
 
