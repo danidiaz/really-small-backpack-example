@@ -1,6 +1,6 @@
 # lesson 7 - module identity
 
-As we have seen, modules in "indefinite" packages can depend on module
+As we have seen, modules in "indefinite" packages can import module
 signatures. Consumers of an indefinite package can "instantiate" it by
 depending on both the indefinite package and a suitable implementation of its
 signatures—possibly requiring some `mixins:` shenanigans to ensure a happy
