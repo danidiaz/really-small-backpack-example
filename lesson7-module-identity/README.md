@@ -6,7 +6,7 @@ depending on both the indefinite package and a suitable implementation of its
 signatures—possibly requiring some `mixins:` shenanigans to ensure a happy
 match.
 
-Suppose we go wild in the `mixins:` section, renaming modules and signatures,
+Suppose we go wild in the `mixins:` section, renaming modules and module signatures,
 making multiple copies of them. We might end up with two or more "instantiated"
 modules which have different names but which, if we trace back the chains of
 module and module signature renamings, actually correspond to the *exact same
