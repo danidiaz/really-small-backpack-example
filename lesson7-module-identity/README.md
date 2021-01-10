@@ -9,7 +9,7 @@ match.
 Suppose we go wild in the `mixins:` section, renaming modules and module signatures,
 making multiple copies of them. We might end up with two or more "instantiated"
 modules which have different names but which, if we trace back the chains of
-module and module signature renamings, actually correspond to the *exact same
+module and module signature renamings, actually are produced by the *exact same
 combination* of  module signatures and implementation modules.
 
 The [cabal file](./package.cabal) for this lesson offers a simple example.
