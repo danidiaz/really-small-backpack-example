@@ -31,3 +31,29 @@ Compile and run the lesson with
 
     cabal run lesson8-transitively-indefinite-packages
 
+## Renaming inherited signatures
+
+A "transitively indefinite" package might wish to rename an inherited
+signature. Why would this be useful? 
+
+- One possible reason is bringing the signature under the "domain" of the
+  package. That way clients that depend on the package encounter a signature
+  with the same root module name as the package.
+- Related to the above, having its own copy of the signature will mean that
+  when the signature is filled, it will be filled for the package only.
+  
+As everything renaming-related in Backpack, this is done with a `mixins:`
+clause.
+
+For example, we could add the following to `library intermediate2`:
+
+    mixins:
+     core requires (Core.SomeSig as Intermediate1.SomeSig)
+
+(Note the use of `requires`. As seen in earlier lessons, `requires` is, well,
+required when we want to rename module signatures.)
+
+Once we have renamed the signature, what other things should we change for the
+lesson to compile? Must `intermediate2` change? Must the executablel change?
+This is left as as exercise.
+
