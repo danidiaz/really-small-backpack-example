@@ -1,0 +1,73 @@
+cabal-version: 3.0
+name: lesson8-transitively-indefinite-packages
+version: 1.0.0.0
+build-type: Simple
+
+-- https://vrom911.github.io/blog/common-stanzas
+-- https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends
+common common
+    build-depends:
+        base          >= 4 && < 5,
+    default-language: Haskell2010
+    ghc-options: -O2 
+    
+library core
+    import: common
+    exposed-modules:  Core
+    signatures:       Core.SomeSig
+    hs-source-dirs:   lib-core
+
+library intermediate1
+    import: common
+    -- This is an indefinite package, but notice that the module signature this 
+    -- library inherits from "core" is not listed *explicitly*! But nevertheless
+    -- it's carried over: clients of "intermediate1" will be able to rename 
+    -- the module signature in a mixin line for "intermediate1".
+    --
+    -- What if we want to *rename* the module signature inherited from core?
+    -- Then we need to add a mixin for core here.
+    exposed-modules:  Intermediate1
+    build-depends:    core
+    -- If we wanted to rename the sig inherited from core.
+    -- mixins:
+    --  core requires (Core.SomeSig as Intermediate1.SomeSig)
+    hs-source-dirs:   lib-intermediate1
+
+-- another intermediate library
+library intermediate2
+    import: common
+    exposed-modules:  Intermediate2
+    build-depends:    intermediate1
+    hs-source-dirs:   lib-intermediate2
+
+-- this executable depends on the "intermediate2" package, but because
+-- "intermediate2" is indefinite, it must also provide an implementation for its
+-- unfilled signatures.
+-- 
+-- Notice that the cabal file for "intermediate2" doesn't explicitly export the module
+-- signature, it's implicitly inherited from "intermediate1" and "core".
+executable lesson8
+    import: common, 
+    main-is: 
+        Main.hs
+    build-depends:
+        intermediate2,
+        lib-impl
+    -- This mixins section is only required because I intentionally made the name of
+    -- the module sig and the name of the implementation module different.
+    -- If they were the same, the matching would happen automatically.
+    mixins:
+        intermediate2 requires (Core.SomeSig as Core.SomeImpl)
+
+-- This internal library exists only to provide an implementation module for
+-- the signature "intermediate2" inherits from "intermediate1".
+--
+-- Note that it doesn't know *anything* about either "intermediate2", "intemediate1" or "core"!
+--
+-- The implementation module can't be in the executable, because a compilation
+-- unit can't fill a signature with a "local" module.
+library lib-impl
+    import: common, 
+    exposed-modules:  Core.SomeImpl
+    hs-source-dirs:   lib-impl
+

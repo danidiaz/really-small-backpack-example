@@ -51,9 +51,6 @@ Haskellwiki.
 [here](https://medium.com/@danidiaz/backpacking-tips-3adb727bb8f7) and
 [here](https://medium.com/@danidiaz/backpacking-tips-ii-47fa86e5bf2).
 
-
-- [An example of how packages that depend on an "indefinite" package with a module signature, without giving it an implementation, become indefinite themselves and carry the signature implicitly.](https://twitter.com/DiazCarrete/status/1379126087637143556)
-
 - [Example of an abstract package on Hackage which uses
 signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 [here](https://www.reddit.com/r/haskell/comments/8a5w1n/new_package_unpackedcontainers/).

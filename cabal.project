@@ -6,4 +6,5 @@ packages: lesson0-convenience-libraries
           lesson5-abstract-typeclasses
           lesson6-abstracting-monad-stacks
           lesson7-module-identity
+          lesson8-transitively-indefinite-packages
 

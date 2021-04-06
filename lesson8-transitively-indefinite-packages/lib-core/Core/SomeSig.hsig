@@ -1,0 +1,4 @@
+-- | A trivial signature exporting an int value.
+signature Core.SomeSig (foo) where
+
+foo :: Int
