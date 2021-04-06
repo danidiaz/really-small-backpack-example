@@ -27,18 +27,18 @@ library intermediate1
     -- What if we want to *rename* the module signature inherited from core?
     -- Then we need to add a mixin for core here.
     exposed-modules:  Intermediate1
+    hs-source-dirs:   lib-intermediate1
     build-depends:    core
     -- If we wanted to rename the sig inherited from core.
     -- mixins:
     --  core requires (Core.SomeSig as Intermediate1.SomeSig)
-    hs-source-dirs:   lib-intermediate1
 
 -- another intermediate library
 library intermediate2
     import: common
     exposed-modules:  Intermediate2
-    build-depends:    intermediate1
     hs-source-dirs:   lib-intermediate2
+    build-depends:    intermediate1
 
 -- this executable depends on the "intermediate2" package, but because
 -- "intermediate2" is indefinite, it must also provide an implementation for its
