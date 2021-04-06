@@ -58,3 +58,11 @@ Once we have renamed the signature, what other things should we change for the
 lesson to compile? Must `intermediate2` change? Must the executablel change?
 This is left as as exercise.
 
+## See also
+
+- [The Backpack explanation in the Cabal User
+  Guide](https://cabal.readthedocs.io/en/latest/cabal-package.html#backpack) 
+
+>  A Backpack package is defined by use of the library:signatures field, or by
+>  (transitive) dependency on a package that defines some requirements. 
+
