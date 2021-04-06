@@ -7,7 +7,7 @@ We call a package "indefinite" if it has an unfilled module signature.
 
 A package can be indefinite because: 
 
-- It directly imports a module signature
+- It directly contains a module signature
 - It has a dependency on another indefinite package, and doesn't fill the
   other package's signatures. In that case, the unfilled signatures are
   "carried over".
