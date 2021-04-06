@@ -45,7 +45,8 @@ signature. Why would this be useful?
 As everything renaming-related in Backpack, this is done with a `mixins:`
 clause.
 
-For example, we could add the following to `library intermediate2`:
+For example, we could add the following to `library intermediate2` in the Cabal
+file:
 
     mixins:
      core requires (Core.SomeSig as Intermediate1.SomeSig)
