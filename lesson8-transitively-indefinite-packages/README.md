@@ -17,7 +17,7 @@ This lesson contains examples of both types. We have
 - A library `core` which directly contains a module signature.
 - A library `intermediate1` which depends on `core`.
 - A library `intermediate2` which depends on `intermediate1`.
-- A library `lib-impl` which provides a compatible implementation for the
+- A library `lib-impl` which is a compatible implementation for the
   module signature, but doesn't know (and must not know!) about any of the
   previous packages.
 - An executable that depends on `intermediate2` and `lib-impl`.
