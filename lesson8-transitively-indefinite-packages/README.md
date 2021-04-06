@@ -55,7 +55,7 @@ file:
 required when we want to rename module signatures.)
 
 Once we have renamed the signature, what other things should we change for the
-lesson to compile? Must `intermediate2` change? Must the executablel change?
+lesson to compile? Must `intermediate2` change? Must the executable change?
 This is left as as exercise.
 
 ## See also
