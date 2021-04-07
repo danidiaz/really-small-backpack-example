@@ -44,6 +44,45 @@ Open a repl in the convenience library with
 cabal repl lib:foo
 ```
 
+## What happens to modules that are not renamed?
+
+In the example code, the library `foo` has an additional `Foo.Extra` module
+that we did *not* rename. What happens if we try to import it from `Lesson1`?
+
+```
+import qualified Foo.Extra
+```
+
+We get an error! How come?
+
+```
+lib/Lesson1.hs:5:1: error:
+    Could not load module ‘Foo.Extra’
+```
+
+This is an important detail about how `mixins:` works: if we make a local copy
+of a library and rename some modules, *all the other modules from the original
+library that haven't been explicitly renamed become hidden*. The original form
+of the dependency is superseded by the altered copies.
+
+What we can do? Mention that module in `mixins:`, too:
+
+```
+   mixins:
+           foo (Foo as Bar),
+           foo (Foo as Baz, Foo.Extra as Baz.Extra)
+```
+
+As we see, when making a "copy" of a library we can rename more than one module
+by separating the renamings with commas. 
+
+And now the previously hidden module can be imported:
+
+```
+import qualified Baz.Extra
+```
+
+
 ## Renaming modules from external packages
 
 We can rename modules from external package dependencies, not only modules of
@@ -58,14 +97,8 @@ respectively:
            bytestring (Data.ByteString as Bytes, Data.ByteString.Lazy as Bytes.Lazy)
 ```
 
-As we see, we can rename *different* modules of the same package by separating
-them with commas. 
-
-One important detail: when a module is renamed in a `mixins:` clause, all the
-other modules from the original library that haven't been explicitly renamed become
-hidden. The original form of the dependency is supersede by the altered copies.
-For example, given the `mixins:` above, we wouldn't be able to import
-`Data.ByteString.Builder` in our code!
+We wouldn't be able to import `Data.ByteString.Builder` in our code however,
+because it's not mentioned int the `mixins:` entry!
 
 ## See also
 
