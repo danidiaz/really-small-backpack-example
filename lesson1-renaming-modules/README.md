@@ -2,13 +2,18 @@
 
 In recent versions of Cabal, there is a new
 [`mixins:`](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins)
-field that allows us to rename modules from packages present in the
+field that allows us to make modified local "copies" of libraries mentioned in
+the
 [`build-depends:`](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends)
-field (it also allows us to rename module signatures, but let's leave that for
-the next lesson.)
+field.
 
-We can make one or more renamed copies of the same module. In the example, we
-make two copies of module `Foo` defined in the "foo" convenience library:
+These "copies" differ from the originals in that their modules might have been
+renamed (module signatures might be renamed as well, but let's leave
+that for the next lesson).
+
+In the example, we make two copies of the internal library `foo`: one in which
+module `Foo` has been renamed to `Bar` and another in which `Foo` has been
+renamed to `Baz`:
 
 ```
    mixins:
@@ -16,7 +21,7 @@ make two copies of module `Foo` defined in the "foo" convenience library:
            foo (Foo as Baz)
 ```
 
-These are both imported by the module `Lesson1`:
+These modules are both imported by the module `Lesson1`:
 
 ```
 import qualified Bar
@@ -56,11 +61,8 @@ respectively:
 As we see, we can rename *different* modules of the same package by separating
 them with commas. 
 
-(Note that making multiple renamed copies of the *same* module, like we did
-earlier with `Foo`, requires separate `mixins:` entries for the package.)
-
 One important detail: when a module is renamed in a `mixins:` clause, all the
-other modules from that package that haven't been explicitly renamed become
+other modules from the original library that haven't been explicitly renamed become
 hidden. The original form of the dependency is supersede by the altered copies.
 For example, given the `mixins:` above, we wouldn't be able to import
 `Data.ByteString.Builder` in our code!
