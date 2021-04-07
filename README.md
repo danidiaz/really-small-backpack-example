@@ -20,12 +20,13 @@ Any corrections welcome!
 signature](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures).
 This is Backpack seen from the language side.
 
-- [The Cabal user guide](https://cabal.readthedocs.io/en/3.4/index.html),
-in particular the sections about
-[signatures](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-library-signatures)
-and
-[mixins](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins).
-This is Backpack seen from the package manager side.
+- [The Backpack section of the Cabal User
+  Guide](https://cabal.readthedocs.io/en/latest/cabal-package.html#backpack)
+  and also the sections about [module
+  signatures](https://cabal.readthedocs.io/en/latest/cabal-package.html#pkg-field-library-signatures)
+  and
+  [mixins](https://cabal.readthedocs.io/en/latest/cabal-package.html#pkg-field-mixins).
+  This is Backpack seen from the package manager side.
 
 ## The theory behind Backpack
 
@@ -48,7 +49,7 @@ Haskellwiki.
 - [GHC proposal](https://github.com/ezyang/ghc-proposals/blob/backpack/proposals/0000-backpack.rst). Interesting bits about the motivation and limits of Backpack.
 
 - I wrote a few Backpack tips & tricks
-[here](https://medium.com/@danidiaz/backpacking-tips-3adb727bb8f7) and
+[here](httpstter.com/geoffreylitt/status/1379579340925632512://medium.com/@danidiaz/backpacking-tips-3adb727bb8f7) and
 [here](https://medium.com/@danidiaz/backpacking-tips-ii-47fa86e5bf2).
 
 - [Example of an abstract package on Hackage which uses
