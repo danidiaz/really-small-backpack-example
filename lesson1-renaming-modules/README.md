@@ -6,7 +6,7 @@ section that allows us to rename modules from our dependencies (it also allows
 us to rename signatures, but let's leave that for the next lesson.)
 
 We can make one or more renamed copies of the same module. In the example, we
-make to copies of module `Foo` defined in the "foo" convenience library:
+make two copies of module `Foo` defined in the "foo" convenience library:
 
 ```
    mixins:
@@ -20,10 +20,6 @@ These are both imported by the module `Lesson1`:
 import qualified Bar
 import qualified Baz
 ```
-
-Here's [a Stack Overflow
-answer](https://stackoverflow.com/questions/47110907/what-should-i-do-if-two-modules-share-the-same-name/47111418#47111418)
-about using "mixins" to rename modules.
 
 Compile in this folder with the command:
 
@@ -63,5 +59,16 @@ them with commas.
 
 One important detail: when a module is renamed in a `mixins:` clause, all the
 other modules from that package that haven't been explicitly renamed become
-hidden. 
+hidden. The original form of the dependency is supersede by the altered copies.
+For example, given the `mixins:` above, we wouldn't be able to import
+`Data.ByteString.Builder` in our code!
+
+## See also
+
+- This [Stack Overflow
+  answer](https://stackoverflow.com/questions/47110907/what-should-i-do-if-two-modules-share-the-same-name/47111418#47111418)
+  about using 'mixins:' to avoid name collisions between modules of different
+  packages.
+
+  'mixins:' is a more principled alternative to the `-XPackageImports` extension.
 
