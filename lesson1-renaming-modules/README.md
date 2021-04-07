@@ -70,5 +70,5 @@ For example, given the `mixins:` above, we wouldn't be able to import
   about using 'mixins:' to avoid name collisions between modules of different
   packages.
 
-  'mixins:' is a more principled alternative to the `-XPackageImports` extension.
+  `mixins:` is a more principled alternative to the `-XPackageImports` extension.
 
