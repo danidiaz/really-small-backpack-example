@@ -82,6 +82,22 @@ Run the executable with:
 cabal run lesson2
 ```
 
+## Common gotchas 
+
+- Having multiple entries in `mixins:` for the same dependency is *not* the
+  same as having a single entry in `mixins:` which performs multiple renamings!
+  Each entry in `mixins:` creates a *different "copy"* of the dependency, with
+  potentially different implementations (like we  did in this lesson, when we
+  created both `String` and `Text` templates).
+
+  If you only want to instantiate an indefinite library in a single way,
+  there's no reason to have multiple entries for the library in `mixins:`.
+
+- Remember: renamings of module signatures always go in the `requires`.
+
+- The library that contains the implementation module should *not* depend,
+  directly or indirectly, on the module signature. 
+
 ## See also
 
 - The full syntax allowed in the `mixins:` field can be found in the
