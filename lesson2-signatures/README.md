@@ -84,7 +84,7 @@ cabal run lesson2
 
 ## See also
 
-- The full syntax allowed in the `mixins:` field can be found on the
+- The full syntax allowed in the `mixins:` field can be found in the
   corresponding section of the [Cabal User Guide](https://cabal.readthedocs.io/en/latest/cabal-package.html#pkg-field-mixins).
 
 
