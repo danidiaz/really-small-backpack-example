@@ -1,10 +1,14 @@
 # really-small-backpack-example
 
-This is a small tutorial on the very basics of the Backpack module system. (Well... at least it started that way. I has grown a bit over time.)
+This is a small tutorial on the very basics of the Backpack module system.
+(Well... at least it started that way. I has grown a bit over time.)
 
-It requires [cabal-install >= 3.2.0.0](https://www.haskell.org/cabal/) and ghc >= 8.10.2. You can install both using [ghcup](https://www.haskell.org/ghcup/).
+It requires [cabal-install >= 3.2.0.0](https://www.haskell.org/cabal/) and ghc
+>= 8.10.2. You can install both using [ghcup](https://www.haskell.org/ghcup/).
 
-It is a [multi-package project](https://cabal.readthedocs.io/en/3.4/nix-local-build.html#developing-multiple-packages). You can build all the packages from this folder using:
+It is a [multi-package
+project](https://cabal.readthedocs.io/en/3.4/nix-local-build.html#developing-multiple-packages).
+You can build all the packages from this folder using:
 
 ```
 cabal build all
@@ -16,7 +20,7 @@ Any corrections welcome!
 
 ## User guides
 
-- A detailed description in the GHC user guide of [what can be put into a module
+- A detailed description in the GHC User Guide of [what can be put into a module
 signature](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/separate_compilation.html#module-signatures).
 This is Backpack seen from the language side.
 
