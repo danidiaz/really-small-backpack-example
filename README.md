@@ -1,6 +1,6 @@
 # really-small-backpack-example
 
-This is a small tutorial on the very basics of the Backpack module system.
+This is a small tutorial on the very basics of the Backpack module system. (Well... at least it started that way. I has grown a bit over time.)
 
 It requires [cabal-install >= 3.2.0.0](https://www.haskell.org/cabal/) and ghc >= 8.10.2. You can install both using [ghcup](https://www.haskell.org/ghcup/).
 
