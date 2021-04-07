@@ -80,12 +80,12 @@ cabal run lesson2
 ## An annoying limitation of implementation libraries
 
 Could we have defined the implementation modules in the executable component
-itself, without putting them in internal convenience libraries? That would have
+itself, without putting them in internal libraries? That would have
 been very convenient.
 
 Sadly, the response is NO. This is a limitation of Backpack: the module that
-fills a signature for a component must be defined in another component (be it a
-convenience library or a completely separate package). 
+fills a signature for a component must be defined in another component (be it an
+internal library or a completely separate package). 
 
 ## Other common gotchas 
 
