@@ -56,7 +56,7 @@ respectively:
 As we see, we can rename *different* modules of the same package by separating
 them with commas. 
 
-(Note that making multiple renamed copies of the *same* module like we did
+(Note that making multiple renamed copies of the *same* module, like we did
 earlier with `Foo`, requires separate `mixins:` entries for the package.)
 
 One important detail: when a module is renamed in a `mixins:` clause, all the
