@@ -1,9 +1,11 @@
 # lesson 1 - renaming modules
 
 In recent versions of Cabal, there is a new
-[`mixins`](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins)
-section that allows us to rename modules from our dependencies (it also allows
-us to rename signatures, but let's leave that for the next lesson.)
+[`mixins:`](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-mixins)
+field that allows us to rename modules from packages present in the
+[`build-depends:`](https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends)
+field (it also allows us to rename module signatures, but let's leave that for
+the next lesson.)
 
 We can make one or more renamed copies of the same module. In the example, we
 make two copies of module `Foo` defined in the "foo" convenience library:
