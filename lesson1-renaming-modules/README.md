@@ -62,8 +62,8 @@ lib/Lesson1.hs:5:1: error:
 
 This is an important detail about how `mixins:` works: if we make a local copy
 of a library and rename some modules, *all the other modules from the original
-library that haven't been explicitly renamed become hidden*. The original form
-of the dependency is superseded by the altered copies.
+library that aren't explicily mentioned in the `mixins:` entry become hidden*.
+The original form of the dependency is superseded by the altered copies.
 
 What we can do? Mention that module in `mixins:`, too:
 

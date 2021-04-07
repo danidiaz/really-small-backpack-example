@@ -24,7 +24,7 @@ This package also defines an executable named ["lesson2"](./Main.hs) that wants 
 library. Use it with two different string types, in fact. How to do this?
 
 First we must find or define modules that give concrete implementation to the
-signature. We do this in the "impl-string" and "impl-text" convenience
+signature. We do this in the `impl-string` and `impl-text` internal
 libraries. We could also use compatible modules from completely different
 packages.
 
@@ -54,22 +54,17 @@ this is why the renaming machinery is important for Backpack.
 And this is basically it. The `Main` module imports both `Lesson2.String` and
 `Lesson2.Text` and makes use of them.
 
-Incidentally, if we only had need for the
-`String` implementation, we could have done something like:
+Incidentally, if we only had need for the `String` implementation, we could
+have done something like this without ambiguity:
 
 ```
     mixins:
-        lesson2-signatures requires (Str as Str.String) 
+        lesson2-signatures (Lesson2) requires (Str as Str.String) 
 ```
 
-and have imported `Lesson2` without renaming it, because there wouldn't have
-been ambiguity in that case.
+mentioning `Lesson2` so as not to leave it hidden, but only renaming the `Str`
+signature.
 
-One final thing: could have we defined the implementation modules in the
-executable component itself, without putting them in internal convenience
-libraries? The response is NO. This is a limitation of Backpack: the module
-that fills a signature for a component must be defined in another component (be
-it a convenience library or a completely separate package). 
 
 Compile in this folder with the command:
 
@@ -82,7 +77,17 @@ Run the executable with:
 cabal run lesson2
 ```
 
-## Common gotchas 
+## An annoying limitation of implementation libraries
+
+Could we have defined the implementation modules in the executable component
+itself, without putting them in internal convenience libraries? That would have
+been very convenient.
+
+Sadly, the response is NO. This is a limitation of Backpack: the module that
+fills a signature for a component must be defined in another component (be it a
+convenience library or a completely separate package). 
+
+## Other common gotchas 
 
 - Having multiple entries in `mixins:` for the same dependency is *not*
   equivalent to having a single entry in `mixins:` that performs multiple
@@ -109,4 +114,6 @@ cabal run lesson2
   corresponding section of the [Cabal User
   Guide](https://cabal.readthedocs.io/en/latest/cabal-package.html#pkg-field-mixins).
 
+- You might want to jump briefly to `lesson7` which deals with the issue of
+  "module identity".
 
