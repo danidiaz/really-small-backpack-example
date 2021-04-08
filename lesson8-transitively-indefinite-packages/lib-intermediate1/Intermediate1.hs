@@ -1,10 +1,12 @@
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE TemplateHaskell, ImportQualifiedPost #-}
 module Intermediate1 (barAsString) where
 
-import Core (fooAsString,makeIdFunc)
+import Core (fooAsString)
+
+import Intermediate1.Splices qualified
 
 -- remove this and it compiles
-$(makeIdFunc)
+$(Intermediate1.Splices.makeIdFunc)
 
 barAsString :: String
 barAsString = "****** " ++ fooAsString ++ " plus bar"

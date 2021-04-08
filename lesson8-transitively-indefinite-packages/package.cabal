@@ -29,10 +29,16 @@ library intermediate1
     -- Then we need to add a mixin for core here.
     exposed-modules:  Intermediate1
     hs-source-dirs:   lib-intermediate1
-    build-depends:    core
+    build-depends:    core,
+                      intermediate1-splices
     -- If we wanted to rename the sig inherited from core.
     -- mixins:
     --  core requires (Core.SomeSig as Intermediate1.SomeSig)
+   
+library intermediate1-splices
+    import: common
+    exposed-modules:  Intermediate1.Splices
+    hs-source-dirs:   lib-intermediate1-splices
 
 -- another intermediate library
 library intermediate2
