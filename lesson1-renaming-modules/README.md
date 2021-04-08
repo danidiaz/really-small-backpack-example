@@ -60,7 +60,7 @@ lib/Lesson1.hs:5:1: error:
     Could not load module ‘Foo.Extra’
 ```
 
-This is an important detail about how `mixins:` works: if we make a local copy
+This is an important detail about how `mixins:` works. If we make a local copy
 of a library and rename some modules, *all the other modules from the original
 library that aren't explicily mentioned in the `mixins:` entry become hidden*.
 The original form of the dependency is superseded by the altered copies.
