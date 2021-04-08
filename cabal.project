@@ -7,4 +7,5 @@ packages: lesson0-convenience-libraries
           lesson6-abstracting-monad-stacks
           lesson7-module-identity
           lesson8-transitively-indefinite-packages
+          lesson9-template-haskell
 
