@@ -8,9 +8,9 @@ In this lesson, we have the following libraries:
 - `intermediate` Another indefinite library which inherits its signature from `core`. It also does some splicing.
 - `intermediate-th` A concrete library, which defines TH code equivalent to the one in `core`.
 - `lib-impl` A concrete implementation library.
-- `lesson9* The main executable, which depends on both *intermediate* and *lib-impl*.
+- `lesson9` The main executable, which depends on both `intermediate` and `lib-impl`.
 
-You can check file `Intermediate.hs` to see the splice. The splice code from comes from the concrete library *intermediate-th*:
+You can check file `Intermediate.hs` to see the splice. The splice code from comes from the concrete library `intermediate-th`:
 
 ```
 -- this works, no problem
@@ -23,7 +23,7 @@ If we compile and run the lesson with
 
 Everything should work correctly.  
 
-## Where thing go wrong: splice code from indefinite libraries
+## Where things go wrong: splice code from indefinite libraries
 
 Suppose that in `Intermediate.hs`, instead of using the splice code from `intermediate-th`, we used
 the splice code from `core`, which happens to be exactly identical:
@@ -49,7 +49,7 @@ Alas, we get an obscure error:
 	If you suspect the latter, please report this as a GHC bug:
 	  https://www.haskell.org/ghc/reportabug
 
-What is happening here? Why the splice code from *core* causes an error?
+What is happening here? Why the splice code from `core` causes an error?
 
 I'm not 100% sure, but I think the reason is that *splice code from as-yet indefinite packages can't work*.
 
