@@ -41,12 +41,12 @@ library intermediate-th
     exposed-modules:  Intermediate.TH
     hs-source-dirs:   lib-intermediate-th
 
--- this executable depends on the "intermediate2" package, but because
--- "intermediate2" is indefinite, it must also provide an implementation for its
+-- this executable depends on the "intermediate1" package, but because
+-- "intermediate" is indefinite, it must also provide an implementation for its
 -- unfilled signatures.
 -- 
--- Notice that the cabal file for "intermediate2" doesn't explicitly export the module
--- signature, it's implicitly inherited from "intermediate1" and "core".
+-- Notice that the cabal file for "intermediate" doesn't explicitly export the module
+-- signature, it's implicitly inherited from "core".
 executable lesson9
     import: common, 
     main-is: 
@@ -58,7 +58,7 @@ executable lesson9
     -- the module sig and the name of the implementation module different.
     -- If they were the same, the matching would happen automatically.
     mixins:
-        intermediate requires (Core.SomeSig as Core.SomeImpl)
+        lib-impl (Core.SomeImpl as Core.SomeSig)
 
 -- This internal library exists only to provide an implementation module for
 -- the signature "intermediate2" inherits from "intermediate1".
