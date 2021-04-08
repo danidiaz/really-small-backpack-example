@@ -64,6 +64,10 @@ because intermediate itself is indefinite.
 
 In a way, this is a more annoying version of the TH [stage restriction](https://markkarpov.com/tutorial/th.html#limitations-of-th).
 
+## What if...
+
+We added a dependency to `core` in `lesson9` and tried to splice `Core.TH.makeIdFunc` in `Main.hs` itself? Should it work, or not? What do you think?
+
 ## See also
 
 - [This Template Haskell tutorial from Mark Karpov](https://markkarpov.com/tutorial/th.html)
