@@ -31,15 +31,15 @@ library intermediate
     exposed-modules:  Intermediate
     hs-source-dirs:   lib-intermediate
     build-depends:    core,
-                      intermediate-splices
+                      intermediate-th
     -- If we wanted to rename the sig inherited from core.
     -- mixins:
     --  core requires (Core.SomeSig as Intermediate1.SomeSig)
    
-library intermediate-splices
+library intermediate-th
     import: common
     exposed-modules:  Intermediate.TH
-    hs-source-dirs:   lib-intermediate-splices
+    hs-source-dirs:   lib-intermediate-th
 
 -- this executable depends on the "intermediate2" package, but because
 -- "intermediate2" is indefinite, it must also provide an implementation for its
