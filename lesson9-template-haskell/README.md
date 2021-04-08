@@ -66,7 +66,7 @@ In a way, this is a more annoying version of the TH [stage restriction](https://
 
 ## What if...
 
-We added a dependency to `core` in `lesson9` and tried to splice `Core.TH.makeIdFunc` in `Main.hs` itself? Should it work, or not? What do you think?
+We added a `core` dependency to `lesson9` and tried to splice `Core.TH.makeIdFunc` in `Main.hs` itself? Should it work, or not? What do you think?
 
 ## See also
 
