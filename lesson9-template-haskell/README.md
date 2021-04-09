@@ -23,7 +23,7 @@ If we compile and run the lesson with
 
 Everything should work correctly.  
 
-## Where things go wrong: splice code from indefinite libraries
+## Where things go wrong: splice code from as-yet indefinite libraries
 
 Suppose that in `Intermediate.hs`, instead of using the splice code from `intermediate-th`, we used
 the splice code from `core`, which happens to be exactly identical:
@@ -49,15 +49,16 @@ Alas, we get an obscure error:
 	If you suspect the latter, please report this as a GHC bug:
 	  https://www.haskell.org/ghc/reportabug
 
-What is happening here? Why the splice code from `core` causes an error?
+What is happening here? Why does the splice code from `core` cause an error?
 
-I'm not 100% sure, but I think the reason is that *splice code from as-yet indefinite packages can't work*.
+The reason is that *splice code from as-yet indefinite libraries can't work*.
 
-Why? When building an indefinite library like `core`, it gets typechecked, but
-not compiled down to object code. We can't do that, because the library still
-has "holes" in it! But that means that other indefinite libraries like
-`intermediate` can't run the splice code when they themselves get typechecked,
-because the splice code doesn't exist yet.
+Why? When we build an indefinite library like `core`, it gets typechecked, but
+not compiled down to object code. That can't be done, because the library still
+has "holes" in it, in the form of unfilled module signatures. But that means
+that other indefinite libraries like `intermediate` can't run the splice code
+when they themselves get typechecked, because the splice code doesn't exist
+yet.
 
 Moving the `Intermediate.TH` module to `intermediate` won't work either,
 because intermediate itself is indefinite.
@@ -69,6 +70,8 @@ In a way, this is a more annoying version of the TH [stage restriction](https://
 We added a `core` dependency to `lesson9` and tried to splice `Core.TH.makeIdFunc` in `Main.hs` itself? Should it work, or not? What do you think?
 
 ## See also
+
+- [This issue from the Cabal repository](https://github.com/haskell/cabal/issues/7353)
 
 - [This Template Haskell tutorial from Mark Karpov](https://markkarpov.com/tutorial/th.html)
 
