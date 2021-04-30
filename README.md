@@ -44,7 +44,7 @@ readable and gives a good account of the motivations for Backpack.
 Not as directly applicable to the current implementation of Backpack as Edward
 Z. Yang's thesis, but useful insights can be gleaned here.
 
-## Other stuff
+## Other Backpack-related stuff
 
 - The [Backpack](https://wiki.haskell.org/Backpack) and [Module
 Signature](https://wiki.haskell.org/Module_signature) entries in the
@@ -79,4 +79,18 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
   instances](https://www.reddit.com/r/haskell/comments/f3b0ie/ann_acts_semigroup_actions_groups_and_torsors/fhk4wpw/)
 
 - [Monad Transformers and Effects with Backpack](https://blog.ocharles.org.uk/posts/2020-12-23-monad-transformers-and-effects-with-backpack.html). [reddit](https://www.reddit.com/r/haskell/comments/kjer0o/monad_transformers_and_effects_with_backpack/).
+
+## Stuff about module systems in general
+
+- [Understanding and Evolving the ML Module System](https://people.mpi-sws.org/~dreyer/thesis/main.pdf) by Mark Dreyer.
+
+- [Modular Type Classes
+  (2007)](http://people.mpi-sws.org/~dreyer/papers/mtc/main-long.pdf)
+  reconstruction of Haskell typeclasses in terms of ML modules "classes are
+  signatures, instances are modules" 
+
+- [ML Modules and Haskell Type Classes: A Constructive Comparison" (2008)](http://priv.stefanwehr.de/publications/Wehr_ML_modules_and_Haskell_type_classes_SHORT.pdf])
+
+- [Logical relations as types](https://twitter.com/jonmsterling/status/1386647300244639747) by Sterling and Harper. [video](https://www.youtube.com/watch?v=AEthjg2k718).
+
 
