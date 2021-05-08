@@ -91,6 +91,15 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [ML Modules and Haskell Type Classes: A Constructive Comparison" (2008)](http://priv.stefanwehr.de/publications/Wehr_ML_modules_and_Haskell_type_classes_SHORT.pdf])
 
-- [Logical relations as types](https://twitter.com/jonmsterling/status/1386647300244639747) by Sterling and Harper. [video](https://www.youtube.com/watch?v=AEthjg2k718).
+- [Logical relations as
+  types](https://twitter.com/jonmsterling/status/1386647300244639747) by
+  Sterling and Harper. [video](https://www.youtube.com/watch?v=AEthjg2k718).
+  This went way over my head, but it seems to propose a method to verify that a
+  module implementation has the same external behaviour as some (presumably
+  simpler) reference implementation.
+
+- [Modules as dependent records tweet](https://twitter.com/jonmsterling/status/1390346042823086084). 
+
+- [Do-it-Yourself Module Systems](https://twitter.com/Iceland_jack/status/1390863512684093448) PhD thesis.
 
 
