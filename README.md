@@ -4,7 +4,7 @@ This is a small tutorial on the very basics of the Backpack module system.
 (Well... at least it started that way. I has grown a bit over time.)
 
 It requires [cabal-install >= 3.2.0.0](https://www.haskell.org/cabal/) and ghc
->= 8.10.2. You can install both using [ghcup](https://www.haskell.org/ghcup/).
+>= 9.0.1. You can install both using [ghcup](https://www.haskell.org/ghcup/).
 
 It is a [multi-package
 project](https://cabal.readthedocs.io/en/3.4/nix-local-build.html#developing-multiple-packages).
