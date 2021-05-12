@@ -8,7 +8,7 @@ The solution proposed in the video is employing a combination of [`RULES`](https
 
 This lesson proposes an alternative solution: create a module signature for the proofs, and then provide two implementations: one with actual proofs (used during tests), and another with "coerced proofs" (used in the executable).
 
-The `Vec` datatype is defined in module `Lesson10` of the main library, which depends on the `Lesson10.Proofs` module signature. Therefore the library is indefinite. Both the main executable and the test suite depend on the library, and the they also depend on the implementation sub-libraries `proofs-coerced` and `proofs`, respectively.
+The `Vec` datatype is defined in module `Lesson10` of the main library, and it depends on the `Lesson10.Proofs` module signature. Therefore the main library is indefinite. Both the executable and the test suite depend on the library, and the they also depend, respectively, on the sub-libraries `proofs-coerced` and `proofs`.
 
 One potential disadvantage of this solution is that we might actually *forget* to compile the version with the non-coerced proofs!
 
