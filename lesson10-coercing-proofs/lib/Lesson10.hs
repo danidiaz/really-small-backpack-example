@@ -16,7 +16,7 @@
 
 module Lesson10 where
 
-import Lesson10.Proofs 
+import Lesson10.Proofs (mPlusZero, mPlusSucc)
 
 import Data.Kind
 import Data.Nat
