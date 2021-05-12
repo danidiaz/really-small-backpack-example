@@ -1,0 +1,49 @@
+cabal-version: 3.0
+name: lesson10-coercing-proofs
+version: 1.0.0.0
+build-type: Simple
+
+-- https://vrom911.github.io/blog/common-stanzas
+-- https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends
+common common
+    build-depends:
+        base          >= 4 && < 5,
+                      singletons ^>= 3.0,
+                      singleton-nats ^>= 0.4
+    default-language: Haskell2010
+    ghc-options: -O2 
+    
+library 
+    import: common
+    exposed-modules:  Lesson10
+    signatures:       Lesson10.Proofs
+    hs-source-dirs:   lib
+
+executable lesson10
+    import: common, 
+    main-is: 
+        Main.hs
+    build-depends:
+        lesson10-coercing-proofs,
+        proofs-coerced
+
+library proofs
+    import: common 
+    exposed-modules:  Lesson10.Proofs
+    hs-source-dirs:   lib-proofs
+
+library proofs-coerced
+    import: common 
+    exposed-modules:  Lesson10.Proofs
+    hs-source-dirs:   lib-proofs-coerced
+
+test-suite tests
+    import: common
+    type:                exitcode-stdio-1.0
+    hs-source-dirs:      test
+    main-is:             tests.hs
+    build-depends:       
+      lesson10-coercing-proofs,
+      proofs-coerced,
+      tasty              >= 1.3.1,
+      tasty-hunit        >= 0.10.0.2
