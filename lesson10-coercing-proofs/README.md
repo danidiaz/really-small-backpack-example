@@ -6,9 +6,9 @@ In [this video about implementing reverse for dependently-typed vectors](https:/
 
 The solution proposed in the video is to use a combination of [`RULES`](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/exts/rewrite_rules.html?highlight=rules) and [`NOINLINE`](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/exts/pragmas.html?highlight=noinline#pragma-NOINLINE) to "coerce" the proofs to `Refl` instead of running them. 
 
-This lesson proposes an alternative solution: put the type signatures of the proofs in a module signature, and then provide two implementations: one with actual proofs (used during tests), and another with "coerced proofs" (used in the executable).
+This lesson proposes an alternative solution: create a module signature for the proofs, and then provide two implementations: one with actual proofs (used during tests), and another with "coerced proofs" (used in the executable).
 
-The module `Lesson10` which defined the `Vec` type depends on the module signature, and therefore is indefinite. The main executable and the tests match it with the implementations. (There are no `mixins:` sections in the `.cabal` file becase the names already match.)
+The `Vec` datatype is defined in module `Lesson10` of the main library, which depends on the `Lesson10.Proofs` module signature. Therefore the library is indefinite. Both the main executable and the test suite depend on the library, and the they also depend on the implementation sub-libraries `proofs-coerced` and `proofs`, respectively.
 
 One potential disadvantage of this solution is that we might actually *forget* to compile the version with the non-coerced proofs!
 
