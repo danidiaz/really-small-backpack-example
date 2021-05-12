@@ -16,6 +16,20 @@ cabal build all
 
 Any corrections welcome!
 
+# lessons
+
+- [00 - convenience libraries](./lesson0-convenience-libraries)
+- [01 - renaming modules](./lesson1-renaming-modules)
+- [02 - signatures](./lesson2-signatures)
+- [03 - signature merging](./lesson3-signature-merging)
+- [04 - signature thinning](./lesson4-signature-thinning)
+- [05 - abstract typeclasses](./lesson5-abstract-typeclasses)
+- [06 - abstracting monad stacks](./lesson6-abstracting-monad-stacks)
+- [07 - module identity](./lesson7-module-identity)
+- [08 - transitively indefinite packages](./lesson8-transitively-indefinite-packages)
+- [09 - template haskell](./lesson9-template-haskell)
+- [10 - coercing proofs](./lesson10-coercing-proofs)
+
 # Further resources for learning Backpack
 
 ## User guides
