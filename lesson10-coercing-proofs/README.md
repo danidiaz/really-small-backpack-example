@@ -2,7 +2,7 @@
 
 (This lesson requires GHC 9.0 or newer.)
 
-In [this video about implementing reverse for dependently-typed vectors](https://www.youtube.com/watch?v=jPZciAJ0oaw) it is mentioned that type equality proofs involving [singletons](http://hackage.haskell.org/package/singletons) are actually executed at runtime, and in fact can be costly to compute.
+In [this video about implementing reverse for dependently-typed vectors](https://www.youtube.com/watch?v=jPZciAJ0oaw) it is mentioned that type equality proofs involving [singletons](http://hackage.haskell.org/package/singletons) are executed at runtime, and in fact can be costly to compute.
 
 The solution proposed in the video is to use a combination of [`RULES`](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/exts/rewrite_rules.html?highlight=rules) and [`NOINLINE`](https://downloads.haskell.org/ghc/latest/docs/html/users_guide/exts/pragmas.html?highlight=noinline#pragma-NOINLINE) to "coerce" the proofs to `Refl` instead of running them. 
 
