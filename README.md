@@ -93,6 +93,12 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [Monad Transformers and Effects with Backpack](https://blog.ocharles.org.uk/posts/2020-12-23-monad-transformers-and-effects-with-backpack.html). [reddit](https://www.reddit.com/r/haskell/comments/kjer0o/monad_transformers_and_effects_with_backpack/).
 
+- [version 0.3.0 of cryptographic library "raaz" uses Bapckpack internally](http://hackage.haskell.org/package/raaz-0.3.0)
+
+- [moo-nad](http://hackage.haskell.org/package/moo-nad) A tiny library that combines module signatures and the "`ReaderT` pattern".
+
+- [a few extant bugs, and a possible way forward](https://discourse.haskell.org/t/hf-tech-proposal-1-utf-8-encoded-text/2499/22)
+
 ## Stuff about module systems in general
 
 - [Understanding and Evolving the ML Module System](https://people.mpi-sws.org/~dreyer/thesis/main.pdf) by Mark Dreyer.
