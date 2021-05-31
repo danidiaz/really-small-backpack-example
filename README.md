@@ -57,6 +57,14 @@ readable and gives a good account of the motivations for Backpack.
 Not as directly applicable to the current implementation of Backpack as Edward
 Z. Yang's thesis, but useful insights can be gleaned here.
 
+## The implementation
+
+- [Backpack design ticket #3038](https://github.com/haskell/cabal/issues/3038).
+
+- [relationship between ComponentId, UnitId, MungedPackageId, PackageId etc.](https://github.com/haskell/cabal/issues/5809).
+
+- [about units](https://github.com/ghc/ghc/blob/ce1b8f4208530fe6449506ba22e3a05048f81564/compiler/GHC/Unit.hs#L25).
+
 ## Other Backpack-related stuff
 
 - The [Backpack](https://wiki.haskell.org/Backpack) and [Module
@@ -99,13 +107,6 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [a few extant bugs, and a possible way forward](https://discourse.haskell.org/t/hf-tech-proposal-1-utf-8-encoded-text/2499/22)
 
-### The implementation of Backpack
-
-- [Backpack design ticket #3038](https://github.com/haskell/cabal/issues/3038).
-
-- [relationship between ComponentId, UnitId, MungedPackageId, PackageId etc.](https://github.com/haskell/cabal/issues/5809).
-
-- [about units](https://github.com/ghc/ghc/blob/ce1b8f4208530fe6449506ba22e3a05048f81564/compiler/GHC/Unit.hs#L25).
 
 ## Stuff about module systems in general
 
