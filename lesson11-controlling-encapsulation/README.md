@@ -30,9 +30,9 @@ The structure of the code is as follows:
   [`Lesson11.UsesFoo`](./lib/Lesson11/UsesFoo.hs).
 
 - The library also defines a typeclass called `Inspectable`. `Foo` has an
-  `Inspectable` instance, which treatens to break encapsulation. We don't want
-  the code from `UsesFoo` to make any decision based on the result of
-  inspecting `Foo` values!
+  [`Inspectable`](./lib/Lesson11/Inspectable.hs) instance, which treatens to
+  break encapsulation. We don't want the code from `UsesFoo` to make any
+  decision based on the result of inspecting `Foo` values!
 
 - Here's the trick: the main library is *indefinite*: the result of the `inspect`
   method from `Inspection` come wrapped in an abstract (in the Backpack sense)
@@ -42,9 +42,10 @@ The structure of the code is as follows:
   useful with the result, because the module signature provides no useful
   functions for working with `Mystery String`s.
 
-- However, the test suite—which we consider "framework code"—provides an
-  implementation module which matches `Mystery` with the `Identity` functor.
-  Meaning that it *can* actually use the results of `inspect`!
+- However, the [test suite](./lib/test/tests.hs)—which we consider "framework
+  code"—provides an implementation module which matches `Mystery` with the
+  `Identity` functor.  Meaning that it *can* actually use the results of
+  `inspect`!
 
 Run the tests with:
 
