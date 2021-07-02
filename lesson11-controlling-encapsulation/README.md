@@ -51,7 +51,7 @@ Run the tests with:
 
 > cabal test lesson11-controlling-encapsulation:test:tests
 
-## Some doubts 
+## Some questions
 
 - Can something like this be done in Haskell without module signatures?
 
