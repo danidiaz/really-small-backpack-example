@@ -35,7 +35,7 @@ The structure of the code is as follows:
   decision based on the result of inspecting `Foo` values!
 
 - Here's the trick: the main library is *indefinite*: the result of the `inspect`
-  method from `Inspection` come wrapped in an abstract (in the Backpack sense)
+  method from `Inspectable` come wrapped in an abstract (in the Backpack sense)
   type constructor called [`Mystery`](./lib/Lesson11/Mystery.hsig). 
 
 - Even if `UsesFoo` calls `inspect` on `Foo` values, it can't do anything
