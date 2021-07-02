@@ -26,8 +26,8 @@ This lesson contains a possible solution using Backpack.
 The structure of the code is as follows:
 
 - The main library—containing "program logic"—defines an abstract datatype
-  `Foo` in module [`Lesson11.Foo`](./lib/Lesson11/Foo.hs), which is used by logic from module
-  [`Lesson11.UsesFoo`](./lib/Lesson11/UsesFoo.hs).
+  `Foo` in module [`Lesson11.Foo`](./lib/Lesson11/Foo.hs), which is imported by
+  module [`Lesson11.UsesFoo`](./lib/Lesson11/UsesFoo.hs).
 
 - The library also defines a typeclass called [`Inspectable`](./lib/Lesson11/Inspectable.hs). `Foo` has an
   `Inspectable` instance, which treatens to
