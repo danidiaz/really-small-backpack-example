@@ -6,7 +6,7 @@ build-type: Simple
 library -- the main library
     hs-source-dirs: lib
     build-depends:
-        base,
+        base          >= 4 && < 5,
         foo
     exposed-modules:
         Lesson0

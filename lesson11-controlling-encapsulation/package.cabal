@@ -11,6 +11,9 @@ common common
     default-language: Haskell2010
     ghc-options: -O2 
     
+-- Code in this library doesn't know what's the implementation of the Mystery
+-- type from the signature.
+-- It can call inspect of Foo values, but can't do anything with them.
 library 
     import: common
     exposed-modules:  Lesson11.Inspectable,
@@ -19,11 +22,14 @@ library
     signatures:       Lesson11.Mystery
     hs-source-dirs:   lib
 
+-- This implementation module makes Mystery be the Identity functor.
 library mystery-solved
     import: common
     exposed-modules:  Lesson11.Mystery,
     hs-source-dirs:   lib-mystery-solved
 
+-- This test, unlike the code in Lesson11.UsesFoo, can call
+-- inspect on Foo values and do useful things with the result.
 test-suite tests
     import: common
     type:                exitcode-stdio-1.0
@@ -31,7 +37,7 @@ test-suite tests
     main-is:             tests.hs
     build-depends:       
       lesson11-controlling-encapsulation,
-      lesson11-controlling-encapsulation:lib-mystery-solved,
+      lesson11-controlling-encapsulation:mystery-solved,
       tasty              >= 1.3.1,
       tasty-hunit        >= 0.10.0.2
 

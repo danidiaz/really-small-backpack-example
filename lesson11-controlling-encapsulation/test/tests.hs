@@ -16,22 +16,18 @@
 
 module Main where
 
-import Prelude hiding (reverse)
-import Lesson10
-import Data.Nat
-import Data.Singletons
+import Lesson11.Foo
+import Lesson11.UsesFoo
+import Lesson11.Inspectable
 import Test.Tasty
 import Test.Tasty.HUnit
-
-vec :: Vec (S (S (S Z))) Char
-vec = 'a' :> 'b' :> 'c' :> Nil
+import Data.Functor.Identity
 
 tests =
   testGroup
     "All"
-    [ testCase "reverse" $
-        assertEqual "" vec $
-            reverse $ reverse $ vec
+    [ testCase "inspection" $
+        assertEqual "" (runIdentity (inspect stuffThatUsesFoo)) "**"
     ]
 
 main :: IO ()

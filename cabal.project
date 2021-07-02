@@ -9,4 +9,5 @@ packages: lesson0-convenience-libraries
           lesson8-transitively-indefinite-packages
           lesson9-template-haskell
           lesson10-coercing-proofs
+          lesson11-controlling-encapsulation
 
