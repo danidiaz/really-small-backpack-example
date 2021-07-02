@@ -29,8 +29,8 @@ The structure of the code is as follows:
   `Foo` in module [`Lesson11.Foo`](./lib/Lesson11/Foo.hs), which is used by logic from module
   [`Lesson11.UsesFoo`](./lib/Lesson11/UsesFoo.hs).
 
-- The library also defines a typeclass called `Inspectable`. `Foo` has an
-  [`Inspectable`](./lib/Lesson11/Inspectable.hs) instance, which treatens to
+- The library also defines a typeclass called [`Inspectable`](./lib/Lesson11/Inspectable.hs). `Foo` has an
+  `Inspectable` instance, which treatens to
   break encapsulation. We don't want the code from `UsesFoo` to make any
   decision based on the result of inspecting `Foo` values!
 
