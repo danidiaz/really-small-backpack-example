@@ -46,8 +46,6 @@ The structure of the code is as follows:
   implementation module which matches `Mystery` with the `Identity` functor.
   Meaning that it *can* actually use the results of `inspect`!
 
-(This lesson requires GHC 9.0 or newer.)
-
 Run the tests with:
 
 > cabal test lesson11-controlling-encapsulation:test:tests

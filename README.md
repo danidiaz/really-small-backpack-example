@@ -28,6 +28,7 @@ Any corrections welcome!
 - [08 - transitively indefinite packages](./lesson8-transitively-indefinite-packages)
 - [09 - template haskell](./lesson9-template-haskell)
 - [10 - coercing proofs](./lesson10-coercing-proofs)
+- [11 - controlling encapsulation](./lesson11-controlling-encapsulation)
 
 # Further resources for learning Backpack
 
