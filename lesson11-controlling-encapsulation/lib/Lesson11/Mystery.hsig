@@ -1,0 +1,9 @@
+{-# LANGUAGE KindSignatures #-} 
+signature Lesson11.Mystery where
+
+import Data.Kind
+
+data Mystery :: Type -> Type
+
+wrappedInMystery :: a -> Mystery a
+
