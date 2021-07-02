@@ -39,8 +39,8 @@ The structure of the code is as follows:
   type constructor called [`Mystery`](./lib/Lesson11/Mystery.hsig). 
 
 - Even if `UsesFoo` calls `inspect` on `Foo` values, it can't do anything
-  useful with the result, because the module signature provides no useful
-  functions for working with `Mystery String`s.
+  useful with the result, because the module signature provides no functions
+  for working with `Mystery String`s.
 
 - However, the [test suite](./lib/test/tests.hs)—which we consider "framework
   code"—provides an implementation module which matches `Mystery` with the
