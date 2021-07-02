@@ -59,8 +59,8 @@ Run the tests with:
   using module signatures? 
 
   In terms of this example: making `Foo` abstract in the Backpack sense (not in
-  the "hide the constructor") sense,  move the implementation to a separate
-  package, and make the program logic work only with the signature.
+  the "hide the constructor") sense,  moving the implementation to a separate
+  package, and making the program logic work only with the signature.
 
 ## See also
 
