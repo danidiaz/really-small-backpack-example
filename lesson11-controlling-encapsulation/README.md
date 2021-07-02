@@ -58,7 +58,7 @@ Run the tests with:
 - How does this compare with making the datatypes themselves *wholly abstract*
   using module signatures? 
 
-  In terms of this example, making `Foo` abstract in the Backpack sense (not in
+  In terms of this example: making `Foo` abstract in the Backpack sense (not in
   the "hide the constructor") sense,  move the implementation to a separate
   package, and make the program logic work only with the signature.
 
