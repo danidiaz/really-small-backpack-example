@@ -13,12 +13,12 @@ structure of a value, if only to perform print-style debugging.
 But this, of course, breaks encapsulation! How to reconcile both requirements?
 
 We begin with the observation is that we don't require complete transparency
-all the time. Regular program logic in a module should *never* have access to
+all the time. Regular *program logic* in a module should never have access to
 the internals of datatypes in other modules. But *framework code* might need to
 break encapsulation for the purposes of logging, and we might break it during a
 REPL session for the purposes of debugging.
 
-How to ensure that abstract datatypes are opaque to the program logic but
+How to ensure that abstract datatypes are opaque to program logic but
 transparent to "framework" code?
 
 This lesson contains a possible solution using Backpack.
@@ -26,17 +26,17 @@ This lesson contains a possible solution using Backpack.
 The structure of the code is as follows:
 
 - The main library—containing "program logic"—defines an abstract datatype
-  `Foo` in module `Lesson11.Foo`, which is used by logic from module
-  `Lesson11.UsesFoo`.
+  `Foo` in module [`Lesson11.Foo`](./lib/Lesson11/Foo.hs), which is used by logic from module
+  [`Lesson11.UsesFoo`](./lib/Lesson11/UsesFoo.hs).
 
-- The library also defines a typeclass called 'Inspectable'. `Foo` has an
-  'Inspectable' instance, which treatens to break encapsulation. We don't want
+- The library also defines a typeclass called `Inspectable`. `Foo` has an
+  `Inspectable` instance, which treatens to break encapsulation. We don't want
   the code from `UsesFoo` to make any decision based on the result of
   inspecting `Foo` values!
 
 - Here's the trick: the main library is *indefinite*: the result of the `inspect`
   method from `Inspection` come wrapped in an abstract (in the Backpack sense)
-  type constructor called `Mystery`. 
+  type constructor called [`Mystery`](./lib/Lesson11/Mystery.hsig). 
 
 - Even if `UsesFoo` calls `inspect` on `Foo` values, it can't do anything
   useful with the result, because the module signature provides no useful
