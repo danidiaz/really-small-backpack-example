@@ -5,7 +5,7 @@ internals, the usual idiom is to give the type its own module and carefully
 exclude the constructor and any field accessor from the export list.
 
 That way, other modules have to use the approved public interface to manipulate
-values of the datapype, and can't carelessly fiddle with values' internals.
+values of the datatype, and can't carelessly fiddle with values' internals.
 
 On the other hand, it can be useful to have some way of inspecting the internal
 structure of a value, if only to perform print-style debugging.
@@ -49,7 +49,7 @@ The structure of the code is as follows:
 
 Run the tests with:
 
-> cabal test lesson11-controlling-encapsulation:test:tests
+> cabal test lesson11-controlling-encapsulation
 
 ## Some questions
 
