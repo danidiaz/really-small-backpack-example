@@ -43,8 +43,8 @@ The structure of the code is as follows:
   for working with `Mystery String`s.
 
 - However, the [test suite](./lib/test/tests.hs)—which we consider "framework
-  code"—provides an implementation module which matches `Mystery` with the
-  `Identity` functor.  Meaning that it *can* actually use the results of
+  code"—provides an [implementation module](./lib-mystery-solved/Lesson11/Mystery.hs) which matches `Mystery` with the
+  [`Identity`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Functor-Identity.html#t:Identity) functor.  Meaning that it *can* actually use the results of
   `inspect`!
 
 Run the tests with:
