@@ -131,4 +131,5 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [Do-it-Yourself Module Systems](https://twitter.com/Iceland_jack/status/1390863512684093448) PhD thesis.
 
+- [Abstract Data Types without the Types](https://homepages.inf.ed.ac.uk/wadler/papers/turner-festschrift/turner-festschrift.pdf).
 
