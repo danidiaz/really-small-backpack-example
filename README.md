@@ -133,3 +133,4 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 - [Abstract Data Types without the Types](https://homepages.inf.ed.ac.uk/wadler/papers/turner-festschrift/turner-festschrift.pdf).
 
+- [Repo with a bibliography about ML module systems](https://github.com/elpinal/modules). [web page](https://elpinal.gitlab.io/modules-bib/). [Mastodon post](https://mathstodon.xyz/@elpinal/109676784280690403).
