@@ -111,7 +111,7 @@ signatures](http://hackage.haskell.org/package/unpacked-containers). Discussed
 
 ## Stuff about module systems in general
 
-- [Understanding and Evolving the ML Module System](https://people.mpi-sws.org/~dreyer/thesis/main.pdf) by Mark Dreyer.
+- [Understanding and Evolving the ML Module System](https://people.mpi-sws.org/~dreyer/thesis/main.pdf) by Derek Dreyer.
 
 - [Modular Type Classes
   (2007)](http://people.mpi-sws.org/~dreyer/papers/mtc/main-long.pdf)
