@@ -1,0 +1,11 @@
+{-# LANGUAGE KindSignatures #-} 
+{-# LANGUAGE StandaloneKindSignatures #-} 
+{-# LANGUAGE TypeFamilies #-} 
+signature Lesson12.Mystery (Mystery (..)) where
+
+import Data.Kind
+
+type Mystery :: Type -> Type
+type family Mystery x where ..
+
+

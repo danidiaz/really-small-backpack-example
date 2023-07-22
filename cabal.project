@@ -10,4 +10,5 @@ packages: lesson0-convenience-libraries
           lesson9-template-haskell
           lesson10-coercing-proofs
           lesson11-controlling-encapsulation
+          lesson12-abstracting-type-families
 

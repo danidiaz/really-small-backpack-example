@@ -1,0 +1,40 @@
+cabal-version: 3.0
+name: lesson12-abstracting-type-families
+version: 1.0.0.0
+build-type: Simple
+
+-- https://vrom911.github.io/blog/common-stanzas
+-- https://cabal.readthedocs.io/en/3.4/cabal-package.html#pkg-field-build-depends
+common common
+    build-depends:
+        base          >= 4 && < 5,
+        text
+    default-language: Haskell2010
+    ghc-options: -O2 
+    
+library 
+    import: common
+    exposed-modules:  Lesson12.User,
+    signatures:       Lesson12.Mystery
+    hs-source-dirs:   lib
+
+-- This implementation module makes Mystery be the Identity functor.
+library mystery-solved
+    import: common
+    exposed-modules:  Lesson12.Mystery,
+    hs-source-dirs:   lib-mystery-solved
+
+-- This test, unlike the code in Lesson12.UsesFoo, can call
+-- inspect on Foo values and do useful things with the result.
+test-suite tests
+    import: common
+    type:                exitcode-stdio-1.0
+    hs-source-dirs:      test
+    main-is:             tests.hs
+    build-depends:       
+      lesson12-abstracting-type-families,
+      lesson12-abstracting-type-families:mystery-solved,
+      tasty              >= 1.3.1,
+      tasty-hunit        >= 0.10.0.2,
+
+
