@@ -5,7 +5,7 @@ signature Lesson12.Mystery (Mystery (..)) where
 
 import Data.Kind
 
-type Mystery :: Type -> Type
-type family Mystery x where ..
+type Mystery :: Type -> Type -> Type
+type family Mystery f x where ..
 
 

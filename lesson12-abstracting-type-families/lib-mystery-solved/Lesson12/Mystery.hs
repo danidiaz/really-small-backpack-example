@@ -8,7 +8,9 @@ import Data.Text
 
 import Data.Kind
 
-type Mystery :: Type -> Type
-type family Mystery x where
-    Mystery Text = Text
-    Mystery Int = ()
+data MysteryMode = MysteryMode
+
+type Mystery :: Type -> Type -> Type
+type family Mystery mode x where
+    Mystery MysteryMode Text = Text
+    Mystery MysteryMode Int = ()

@@ -29,6 +29,7 @@ Any corrections welcome!
 - [09 - template haskell](./lesson9-template-haskell)
 - [10 - coercing proofs](./lesson10-coercing-proofs)
 - [11 - controlling encapsulation](./lesson11-controlling-encapsulation)
+- [12 - abstracting type families](./lesson12-abstracting-type-families)
 
 # Further resources for learning Backpack
 
