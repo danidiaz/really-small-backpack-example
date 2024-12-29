@@ -67,6 +67,8 @@ Z. Yang's thesis, but useful insights can be gleaned here.
 
 - [about units](https://github.com/ghc/ghc/blob/ce1b8f4208530fe6449506ba22e3a05048f81564/compiler/GHC/Unit.hs#L25).
 
+- [GHC Issue #20890: Multiple home units and Backpack together](https://gitlab.haskell.org/ghc/ghc/-/issues/20890).
+
 ## Other Backpack-related stuff
 
 - The [Backpack](https://wiki.haskell.org/Backpack) and [Module
