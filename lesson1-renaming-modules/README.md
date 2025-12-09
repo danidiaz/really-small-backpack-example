@@ -41,7 +41,7 @@ cabal repl lib:lesson1-renaming-modules
 Open a repl in the convenience library with
 
 ```
-cabal repl lib:foo
+cabal repl lesson1-renaming-modules:lib:foo
 ```
 
 ## What happens to modules that are not renamed?

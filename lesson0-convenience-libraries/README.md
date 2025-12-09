@@ -28,5 +28,5 @@ cabal repl lib:lesson0-convenience-libraries
 Open a repl in the convenience library with
 
 ```
-cabal repl lib:foo
+cabal repl lesson0-convenience-libraries:lib:foo
 ```
